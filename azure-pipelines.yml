@@ -4,9 +4,11 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+name: 'Build and Test'
+
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
+  project: '**/*.csproj'
+  testProjects: '**/*Tests/*.csproj'
   buildConfiguration: 'Release'
 
 steps:
@@ -16,14 +18,19 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: UseDotNet@2
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    msbuildArgs: '-graphBuild:True'
+    version: '2.1.x'
+    packageType: runtime
 
-- task: VSTest@2
+- task: DotNetCoreCLI@2
   inputs:
-    platform: '$(buildPlatform)'
+    command: build
+    projects: $(project)
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: $(testProjects)
     configuration: '$(buildConfiguration)'
