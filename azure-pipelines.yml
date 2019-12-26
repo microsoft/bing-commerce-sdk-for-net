@@ -4,33 +4,38 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-name: 'Build and Test'
-
 variables:
   project: '**/*.csproj'
   testProjects: '**/*Tests/*.csproj'
   buildConfiguration: 'Release'
 
-steps:
-- task: NuGetToolInstaller@1
+jobs:
+- job: 'BuildAndTest'
+  displayName: 'Build and Test'
+  steps:
+  - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+  - task: NuGetCommand@2
+    displayName: 'Restore NuGet'
+    inputs:
+      restoreSolution: '$(solution)'
 
-- task: UseDotNet@2
-  inputs:
-    version: '2.1.x'
-    packageType: runtime
+  - task: UseDotNet@2
+    displayName: 'Set .net Core Version'
+    inputs:
+      version: '2.1.x'
+      packageType: runtime
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: build
-    projects: $(project)
-    configuration: '$(buildConfiguration)'
+  - task: DotNetCoreCLI@2
+    displayName: 'Build Projects'
+    inputs:
+      command: build
+      projects: $(project)
+      configuration: '$(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: $(testProjects)
-    configuration: '$(buildConfiguration)'
+  - task: DotNetCoreCLI@2
+    displayName: 'Run Unit Tests'
+    inputs:
+      command: test
+      projects: $(testProjects)
+      configuration: '$(buildConfiguration)'
