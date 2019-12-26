@@ -21,6 +21,7 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    msbuildArgs: '-graphBuild:True'
 
 - task: VSTest@2
   inputs:
