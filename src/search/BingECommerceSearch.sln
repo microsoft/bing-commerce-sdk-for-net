@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BingECommerceSearch", "src\BingECommerceSearch.csproj", "{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingECommerceSearch.Tests", "tests\BingECommerceSearch.Tests\BingECommerceSearch.Tests.csproj", "{461E67C5-2BB4-4137-BB81-B5E2586895D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|amd64 = Debug|amd64
+		Debug|Any CPU = Debug|Any CPU
+		Release|amd64 = Release|amd64
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Debug|amd64.ActiveCfg = Debug|amd64
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Debug|amd64.Build.0 = Debug|amd64
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Debug|Any CPU.ActiveCfg = Debug|amd64
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Release|amd64.ActiveCfg = Release|amd64
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Release|amd64.Build.0 = Release|amd64
+		{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}.Release|Any CPU.ActiveCfg = Release|amd64
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Debug|amd64.ActiveCfg = Debug|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Debug|amd64.Build.0 = Debug|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Release|amd64.ActiveCfg = Release|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Release|amd64.Build.0 = Release|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461E67C5-2BB4-4137-BB81-B5E2586895D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D719D4F3-6F93-47C5-8527-085600D4433B}
+	EndGlobalSection
+EndGlobal
