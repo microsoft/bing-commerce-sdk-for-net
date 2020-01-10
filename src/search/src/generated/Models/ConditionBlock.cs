@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a list of composite conditions for filtering and boosting.
+    /// </summary>
     public partial class ConditionBlock : ConditionBase
     {
         /// <summary>
@@ -24,8 +27,9 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ConditionBlock class.
         /// </summary>
-        /// <param name="operatorProperty">Possible values include: 'And',
-        /// 'Or'</param>
+        /// <param name="conditions">The set of operands.</param>
+        /// <param name="operatorProperty">and, or. Default is `And`. Possible
+        /// values include: 'And', 'Or'</param>
         public ConditionBlock(IList<ConditionBase> conditions = default(IList<ConditionBase>), LogicalOperator? operatorProperty = default(LogicalOperator?))
         {
             Conditions = conditions;
@@ -39,12 +43,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the set of operands.
         /// </summary>
         [JsonProperty(PropertyName = "conditions")]
         public IList<ConditionBase> Conditions { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'And', 'Or'
+        /// Gets or sets and, or. Default is `And`. Possible values include:
+        /// 'And', 'Or'
         /// </summary>
         [JsonProperty(PropertyName = "operator")]
         public LogicalOperator? OperatorProperty { get; set; }

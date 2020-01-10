@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for conditions with a field name.
+    /// </summary>
     public partial class FieldConditionBase : ConditionBase
     {
         /// <summary>
@@ -22,6 +25,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the FieldConditionBase class.
         /// </summary>
+        /// <param name="field">The name of the field.</param>
         public FieldConditionBase(string field = default(string))
         {
             Field = field;
@@ -34,6 +38,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the name of the field.
         /// </summary>
         [JsonProperty(PropertyName = "field")]
         public string Field { get; set; }

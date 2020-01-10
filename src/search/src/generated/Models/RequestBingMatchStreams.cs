@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
@@ -25,6 +25,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestBingMatchStreams class.
         /// </summary>
+        /// <param name="value">The search terms to match on the specified
+        /// fields.</param>
         public RequestBingMatchStreams(string value = default(string), IList<string> include = default(IList<string>), IList<string> exclude = default(IList<string>))
             : base(value)
         {

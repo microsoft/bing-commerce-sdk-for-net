@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a facet where each refinement is for a single value.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Facet")]
     public partial class RequestFacet : RequestFacetBase
     {
@@ -25,6 +28,12 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestFacet class.
         /// </summary>
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
+        /// <param name="field">The field name.</param>
+        /// <param name="orderBy">A comma-separated list of OData order syntax
+        /// expressions. Default is `_count desc`</param>
         public RequestFacet(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), string field = default(string), string orderBy = default(string))
             : base(name, aggregations, field, orderBy)
         {

@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// A response that represents the status of an index within its supported
+    /// regions.
+    /// </summary>
     public partial class IndexStatusResponse
     {
         /// <summary>
@@ -24,6 +28,8 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the IndexStatusResponse class.
         /// </summary>
+        /// <param name="indexStatuses">A list of objects containing the status
+        /// of the index within a region.</param>
         public IndexStatusResponse(IList<ResponseIndexStatus> indexStatuses = default(IList<ResponseIndexStatus>))
         {
             IndexStatuses = indexStatuses;
@@ -36,6 +42,8 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a list of objects containing the status of the index
+        /// within a region.
         /// </summary>
         [JsonProperty(PropertyName = "indexStatuses")]
         public IList<ResponseIndexStatus> IndexStatuses { get; set; }

@@ -10,8 +10,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ingestion\src\BingECommerceIngestion.csproj" />
-    <ProjectReference Include="..\..\src\search\src\BingECommerceSearch.csproj" />
+    <ProjectReference Include="..\..\src\ingestion\src\BingCommerceIngestion.csproj" />
+    <ProjectReference Include="..\..\src\search\src\BingCommerceSearch.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ReferencePath Include="@(ReferenceDependencyPaths)">
+    </ReferencePath>
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;

@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an equivalence condition for a string field. It can appear in a
+    /// filter, a boost, or a filter aggregation.
+    /// </summary>
     public partial class StringCondition : EquivalenceConditionBase
     {
         /// <summary>
@@ -22,8 +26,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the StringCondition class.
         /// </summary>
+        /// <param name="field">The name of the field.</param>
         /// <param name="operatorProperty">Possible values include: 'Eq',
         /// 'Ne'</param>
+        /// <param name="value">The value to compare the field against.</param>
         public StringCondition(string field = default(string), EquivalenceOperator? operatorProperty = default(EquivalenceOperator?), string value = default(string))
             : base(field, operatorProperty)
         {
@@ -37,6 +43,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the value to compare the field against.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public string Value { get; set; }

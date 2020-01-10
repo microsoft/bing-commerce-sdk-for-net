@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search
+namespace Microsoft.Bing.Commerce.Search
 {
     using Microsoft.Rest;
     using Models;
@@ -21,7 +21,7 @@ namespace Microsoft.Bing.ECommerce.Search
     /// <summary>
     /// SearchOperations operations.
     /// </summary>
-    public partial class SearchOperations : IServiceOperations<BingECommerceSearch>, ISearchOperations
+    public partial class SearchOperations : IServiceOperations<BingCommerceSearch>, ISearchOperations
     {
         /// <summary>
         /// Initializes a new instance of the SearchOperations class.
@@ -32,7 +32,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public SearchOperations(BingECommerceSearch client)
+        public SearchOperations(BingCommerceSearch client)
         {
             if (client == null)
             {
@@ -42,15 +42,21 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Gets a reference to the BingECommerceSearch
+        /// Gets a reference to the BingCommerceSearch
         /// </summary>
-        public BingECommerceSearch Client { get; private set; }
+        public BingCommerceSearch Client { get; private set; }
 
+        /// <summary>
+        /// Bing Commerce Custom Search Query.
+        /// </summary>
+        /// <remarks>
+        /// POST requests accept complex search request options.
+        /// </remarks>
+        /// <param name='body'>
+        /// </param>
         /// <param name='tenant'>
         /// </param>
         /// <param name='index'>
-        /// </param>
-        /// <param name='body'>
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -73,8 +79,12 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<ECommerceSearchResponse>> PostWithHttpMessagesAsync(string tenant, string index, ECommerceSearchPostRequest body = default(ECommerceSearchPostRequest), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<CommerceSearchResponse>> PostWithHttpMessagesAsync(CommerceSearchPostRequest body, string tenant, string index, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (body == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "body");
+            }
             if (tenant == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "tenant");
@@ -172,7 +182,7 @@ namespace Microsoft.Bing.ECommerce.Search
                 throw ex;
             }
             // Create Result
-            var _result = new HttpOperationResponse<ECommerceSearchResponse>();
+            var _result = new HttpOperationResponse<CommerceSearchResponse>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             // Deserialize Response
@@ -181,7 +191,7 @@ namespace Microsoft.Bing.ECommerce.Search
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<ECommerceSearchResponse>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<CommerceSearchResponse>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {
@@ -200,31 +210,53 @@ namespace Microsoft.Bing.ECommerce.Search
             return _result;
         }
 
+        /// <summary>
+        /// Bing Commerce Basic Search Query.
+        /// </summary>
+        /// <remarks>
+        /// GET requests can search an index using only URL parameters. Only limited
+        /// request options are available. GET requests will always do simple item
+        /// search and support only a default facet discovery aggregation.
+        /// </remarks>
+        /// <param name='q'>
+        /// The query to match against all eligible fields.
+        /// </param>
         /// <param name='tenant'>
         /// </param>
         /// <param name='index'>
         /// </param>
         /// <param name='mkt'>
+        /// The market where the results come from. Thypically, `mkt` is the country
+        /// where the user is making the request from.
         /// </param>
         /// <param name='setlang'>
-        /// </param>
-        /// <param name='q'>
+        /// The language to use for user interface strings. You may specify the
+        /// language using either a 2-letter or 4-letter code. Using 4-letter codes is
+        /// preferred.
         /// </param>
         /// <param name='select'>
+        /// A comma-separated list of fields to return. unspecified or empty to select
+        /// only _itemId, or `*` to select all fields.
         /// </param>
         /// <param name='orderby'>
+        /// A comma-separated list of OData order syntax expressions.
         /// </param>
         /// <param name='top'>
+        /// The maximum count of items to return for pagination. Default is 24.
         /// </param>
         /// <param name='skip'>
+        /// The offset to the first item to return for pagination. Default is 0.
         /// </param>
         /// <param name='discoverfacets'>
+        /// Default value is false. When true, requests a facet discovery aggregation.
         /// </param>
         /// <param name='alteration'>
+        /// A boolean flag to enable or disable query alteration. Default is true.
         /// </param>
         /// <param name='debug'>
         /// </param>
         /// <param name='searchinstanceid'>
+        /// A saved search instance configuration to apply to current request.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -247,8 +279,12 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<ECommerceSearchResponse>> GetWithHttpMessagesAsync(string tenant, string index, string mkt = default(string), string setlang = default(string), string q = default(string), string select = default(string), string orderby = default(string), int? top = default(int?), int? skip = default(int?), bool? discoverfacets = false, bool? alteration = true, bool? debug = false, string searchinstanceid = "Default", Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<CommerceSearchResponse>> GetWithHttpMessagesAsync(string q, string tenant, string index, string mkt = default(string), string setlang = default(string), string select = default(string), string orderby = default(string), int? top = default(int?), int? skip = default(int?), bool? discoverfacets = false, bool? alteration = true, bool? debug = false, string searchinstanceid = "Default", Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (q == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "q");
+            }
             if (tenant == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "tenant");
@@ -399,7 +435,7 @@ namespace Microsoft.Bing.ECommerce.Search
                 throw ex;
             }
             // Create Result
-            var _result = new HttpOperationResponse<ECommerceSearchResponse>();
+            var _result = new HttpOperationResponse<CommerceSearchResponse>();
             _result.Request = _httpRequest;
             _result.Response = _httpResponse;
             // Deserialize Response
@@ -408,7 +444,7 @@ namespace Microsoft.Bing.ECommerce.Search
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<ECommerceSearchResponse>(_responseContent, Client.DeserializationSettings);
+                    _result.Body = Rest.Serialization.SafeJsonConvert.DeserializeObject<CommerceSearchResponse>(_responseContent, Client.DeserializationSettings);
                 }
                 catch (JsonException ex)
                 {

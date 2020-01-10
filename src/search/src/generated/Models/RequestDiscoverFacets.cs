@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an aggregation type that triggers facet discovery of
+    /// significant facets.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("DiscoverFacets")]
     public partial class RequestDiscoverFacets : RequestAggregationBase
     {
@@ -25,6 +29,23 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestDiscoverFacets class.
         /// </summary>
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
+        /// <param name="discoverFilter">When true, if the top results share a
+        /// filter then restrict facet discovery to that filter. Note that it
+        /// attempts to discover category based filters.</param>
+        /// <param name="refinements">When true, returns refinement values in
+        /// the response.</param>
+        /// <param name="pin">A list of facets to pin at the top positions of
+        /// the DiscoveredFacets aggregations list.</param>
+        /// <param name="include">A list of facets to be included, but not
+        /// necessarily at the top positions.</param>
+        /// <param name="exclude">A list of field names to exclude from
+        /// consideration.</param>
+        /// <param name="facetDefaults">default facets to apply.</param>
+        /// <param name="rangeFacetDefaults">default range facets to
+        /// apply.</param>
         public RequestDiscoverFacets(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), bool? discoverFilter = default(bool?), bool? refinements = default(bool?), IList<RequestFacetBase> pin = default(IList<RequestFacetBase>), IList<RequestFacetBase> include = default(IList<RequestFacetBase>), IList<string> exclude = default(IList<string>), RequestFacet facetDefaults = default(RequestFacet), RequestRangeFacet rangeFacetDefaults = default(RequestRangeFacet))
             : base(name, aggregations)
         {
@@ -44,36 +65,47 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets when true, if the top results share a filter then
+        /// restrict facet discovery to that filter. Note that it attempts to
+        /// discover category based filters.
         /// </summary>
         [JsonProperty(PropertyName = "discoverFilter")]
         public bool? DiscoverFilter { get; set; }
 
         /// <summary>
+        /// Gets or sets when true, returns refinement values in the response.
         /// </summary>
         [JsonProperty(PropertyName = "refinements")]
         public bool? Refinements { get; set; }
 
         /// <summary>
+        /// Gets or sets a list of facets to pin at the top positions of the
+        /// DiscoveredFacets aggregations list.
         /// </summary>
         [JsonProperty(PropertyName = "pin")]
         public IList<RequestFacetBase> Pin { get; set; }
 
         /// <summary>
+        /// Gets or sets a list of facets to be included, but not necessarily
+        /// at the top positions.
         /// </summary>
         [JsonProperty(PropertyName = "include")]
         public IList<RequestFacetBase> Include { get; set; }
 
         /// <summary>
+        /// Gets or sets a list of field names to exclude from consideration.
         /// </summary>
         [JsonProperty(PropertyName = "exclude")]
         public IList<string> Exclude { get; set; }
 
         /// <summary>
+        /// Gets or sets default facets to apply.
         /// </summary>
         [JsonProperty(PropertyName = "facetDefaults")]
         public RequestFacet FacetDefaults { get; set; }
 
         /// <summary>
+        /// Gets or sets default range facets to apply.
         /// </summary>
         [JsonProperty(PropertyName = "rangeFacetDefaults")]
         public RequestRangeFacet RangeFacetDefaults { get; set; }

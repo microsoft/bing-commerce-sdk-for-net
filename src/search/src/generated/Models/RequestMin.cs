@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Aggregation type for getting the min value of a field. Only applicable
+    /// to numeric data.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Min")]
     public partial class RequestMin : RequestFieldAggregationBase
     {
@@ -25,6 +29,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestMin class.
         /// </summary>
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
+        /// <param name="field">The field name.</param>
         public RequestMin(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), string field = default(string))
             : base(name, aggregations, field)
         {

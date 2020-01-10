@@ -1,6 +1,6 @@
-﻿namespace Microsoft.Bing.ECommerce.Search
+﻿namespace Microsoft.Bing.Commerce.Search
 {
-    using Microsoft.Bing.ECommerce.Search.Models;
+    using Microsoft.Bing.Commerce.Search.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;

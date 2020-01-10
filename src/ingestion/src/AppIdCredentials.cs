@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Bing.ECommerce.Ingestion
+﻿namespace Microsoft.Bing.Commerce.Ingestion
 {
     using Microsoft.Rest;
     using System;

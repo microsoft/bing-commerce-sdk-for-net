@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a discrete number refinement on a numeric field.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("NumberRefinement")]
     public partial class ResponseNumberRefinement : ResponseRefinementBase
     {
@@ -25,6 +28,18 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseNumberRefinement class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="name">The aggregation name as defined in the
+        /// requset.</param>
+        /// <param name="estimatedCount">An estimated count of items in this
+        /// aggregation.</param>
+        /// <param name="aggregations">The list of child aggregations, if
+        /// any.</param>
+        /// <param name="label">The label to use for the aggregation, that you
+        /// can use to render your UI.</param>
+        /// <param name="value">The actual filter value used to filter the list
+        /// of items.</param>
         public ResponseNumberRefinement(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string label = default(string), double? value = default(double?))
             : base(errors, debug, name, estimatedCount, aggregations, label)
         {
@@ -38,6 +53,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the actual filter value used to filter the list of
+        /// items.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public double? Value { get; set; }

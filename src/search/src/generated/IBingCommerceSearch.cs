@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search
+namespace Microsoft.Bing.Commerce.Search
 {
     using Microsoft.Rest;
     using Models;
@@ -12,7 +12,7 @@ namespace Microsoft.Bing.ECommerce.Search
 
     /// <summary>
     /// </summary>
-    public partial interface IBingECommerceSearch : System.IDisposable
+    public partial interface IBingCommerceSearch : System.IDisposable
     {
         /// <summary>
         /// The base URI of the service.

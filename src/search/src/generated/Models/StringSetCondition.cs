@@ -4,13 +4,18 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a condition where the field must exactly match one of the
+    /// values within the set to be included / excluded. It can appear in a
+    /// filter, a boost, or a filter aggregation.
+    /// </summary>
     public partial class StringSetCondition : SetConditionBase
     {
         /// <summary>
@@ -24,8 +29,11 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the StringSetCondition class.
         /// </summary>
+        /// <param name="field">The name of the field.</param>
         /// <param name="operatorProperty">Possible values include: 'In',
         /// 'NotIn'</param>
+        /// <param name="values">The set of values for the field to match
+        /// against.</param>
         public StringSetCondition(string field = default(string), SetOperator? operatorProperty = default(SetOperator?), IList<string> values = default(IList<string>))
             : base(field, operatorProperty)
         {
@@ -39,6 +47,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the set of values for the field to match against.
         /// </summary>
         [JsonProperty(PropertyName = "values")]
         public IList<string> Values { get; set; }

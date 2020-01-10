@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a geographical boundary that matches location within a certain
+    /// euclidean distance from a point.
+    /// </summary>
     public partial class GeoDistance : GeoBoundaryBase
     {
         /// <summary>
@@ -22,6 +26,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the GeoDistance class.
         /// </summary>
+        /// <param name="center">The geo-location for the center point to match
+        /// around.</param>
+        /// <param name="radius">The accpeptable euclidean distance to the
+        /// center.</param>
         public GeoDistance(GeoPoint center = default(GeoPoint), double? radius = default(double?))
         {
             Center = center;
@@ -35,11 +43,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the geo-location for the center point to match around.
         /// </summary>
         [JsonProperty(PropertyName = "center")]
         public GeoPoint Center { get; set; }
 
         /// <summary>
+        /// Gets or sets the accpeptable euclidean distance to the center.
         /// </summary>
         [JsonProperty(PropertyName = "radius")]
         public double? Radius { get; set; }

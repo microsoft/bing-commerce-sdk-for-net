@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an inclusion condition for a category field. It can appear in a
+    /// filter, a boost, or a filter aggregation.
+    /// </summary>
     public partial class CategoryCondition : FieldConditionBase
     {
         /// <summary>
@@ -22,8 +26,12 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the CategoryCondition class.
         /// </summary>
-        /// <param name="operatorProperty">Possible values include: 'In',
-        /// 'NotIn'</param>
+        /// <param name="field">The name of the field.</param>
+        /// <param name="value">The category to match items against. The format
+        /// for specifying hierarchical categories is a pipe-delimited string,
+        /// such as `Meanswear|shirts|Dress Shirts`.</param>
+        /// <param name="operatorProperty">The category operator to apply.
+        /// Default is `In`. Possible values include: 'In', 'NotIn'</param>
         public CategoryCondition(string field = default(string), string value = default(string), CategoryOperator? operatorProperty = default(CategoryOperator?))
             : base(field)
         {
@@ -38,12 +46,16 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the category to match items against. The format for
+        /// specifying hierarchical categories is a pipe-delimited string, such
+        /// as `Meanswear|shirts|Dress Shirts`.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public string Value { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'In', 'NotIn'
+        /// Gets or sets the category operator to apply. Default is `In`.
+        /// Possible values include: 'In', 'NotIn'
         /// </summary>
         [JsonProperty(PropertyName = "operator")]
         public CategoryOperator? OperatorProperty { get; set; }

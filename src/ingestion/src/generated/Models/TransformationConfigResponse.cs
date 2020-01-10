@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
@@ -24,6 +24,10 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// Initializes a new instance of the TransformationConfigResponse
         /// class.
         /// </summary>
+        /// <param name="value">The contents of the transformation config
+        /// that's being managed.</param>
+        /// <param name="tryOutId">An id that you can use to tryout your
+        /// transformation on the cloud.</param>
         public TransformationConfigResponse(string value = default(string), string tryOutId = default(string))
         {
             Value = value;
@@ -37,11 +41,15 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the contents of the transformation config that's being
+        /// managed.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public string Value { get; set; }
 
         /// <summary>
+        /// Gets or sets an id that you can use to tryout your transformation
+        /// on the cloud.
         /// </summary>
         [JsonProperty(PropertyName = "tryOutId")]
         public string TryOutId { get; set; }

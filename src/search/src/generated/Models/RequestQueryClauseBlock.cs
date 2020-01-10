@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a list of QueryClauseBase objects that should all match. Nested
+    /// QueryClauseBlock within QueryClauseBlock is not allowed.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("QueryClauseBlock")]
     public partial class RequestQueryClauseBlock : RequestQueryClauseBase
     {
@@ -25,6 +29,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestQueryClauseBlock class.
         /// </summary>
+        /// <param name="values">A list of queryclausebase conditions to be
+        /// applied.</param>
         public RequestQueryClauseBlock(IList<RequestQueryClauseBase> values = default(IList<RequestQueryClauseBase>))
         {
             Values = values;
@@ -37,6 +43,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a list of queryclausebase conditions to be applied.
         /// </summary>
         [JsonProperty(PropertyName = "values")]
         public IList<RequestQueryClauseBase> Values { get; set; }

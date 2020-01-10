@@ -4,10 +4,13 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using System.Linq;
 
+    /// <summary>
+    /// The condition that triggered a boost in ranking score.
+    /// </summary>
     public partial class ConditionBase
     {
         /// <summary>

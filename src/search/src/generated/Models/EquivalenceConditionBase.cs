@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for conditions that does an exact match
+    /// for a field.
+    /// </summary>
     public partial class EquivalenceConditionBase : FieldConditionBase
     {
         /// <summary>
@@ -22,6 +26,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the EquivalenceConditionBase class.
         /// </summary>
+        /// <param name="field">The name of the field.</param>
         /// <param name="operatorProperty">Possible values include: 'Eq',
         /// 'Ne'</param>
         public EquivalenceConditionBase(string field = default(string), EquivalenceOperator? operatorProperty = default(EquivalenceOperator?))

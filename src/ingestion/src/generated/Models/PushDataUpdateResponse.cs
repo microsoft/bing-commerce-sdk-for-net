@@ -4,13 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// A response to a push data update.
+    /// </summary>
     public partial class PushDataUpdateResponse
     {
         /// <summary>
@@ -24,9 +25,10 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the PushDataUpdateResponse class.
         /// </summary>
-        public PushDataUpdateResponse(IList<ResponsePushDataUpdateStatus> statuses = default(IList<ResponsePushDataUpdateStatus>), string updateId = default(string))
+        /// <param name="updateId">The id of the push data update that you can
+        /// use to track it down.</param>
+        public PushDataUpdateResponse(string updateId = default(string))
         {
-            Statuses = statuses;
             UpdateId = updateId;
             CustomInit();
         }
@@ -37,11 +39,8 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "statuses")]
-        public IList<ResponsePushDataUpdateStatus> Statuses { get; set; }
-
-        /// <summary>
+        /// Gets or sets the id of the push data update that you can use to
+        /// track it down.
         /// </summary>
         [JsonProperty(PropertyName = "updateId")]
         public string UpdateId { get; set; }

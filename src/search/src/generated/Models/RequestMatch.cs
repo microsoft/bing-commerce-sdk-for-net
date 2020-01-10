@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a type of query to search specific fields.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Match")]
     public partial class RequestMatch : RequestQueryClauseBase
     {
@@ -23,6 +26,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestMatch class.
         /// </summary>
+        /// <param name="value">The search terms to match on the specified
+        /// fields.</param>
         public RequestMatch(string value = default(string))
         {
             Value = value;
@@ -35,6 +40,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the search terms to match on the specified fields.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public string Value { get; set; }

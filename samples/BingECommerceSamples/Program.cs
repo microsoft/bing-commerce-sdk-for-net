@@ -1,15 +1,15 @@
-﻿using Microsoft.Bing.ECommerce.Ingestion;
-using Microsoft.Bing.ECommerce.Search;
+﻿using Microsoft.Bing.Commerce.Ingestion;
+using Microsoft.Bing.Commerce.Search;
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Bing.ECommerce.Search.Models;
-using Microsoft.Bing.ECommerce.Ingestion.Models;
-using Index = Microsoft.Bing.ECommerce.Ingestion.Models.Index;
+using Microsoft.Bing.Commerce.Search.Models;
+using Microsoft.Bing.Commerce.Ingestion.Models;
+using Index = Microsoft.Bing.Commerce.Ingestion.Models.Index;
 
-namespace BingECommerceSamples
+namespace BingCommerceSamples
 {
     class Program
     {
@@ -47,10 +47,11 @@ namespace BingECommerceSamples
             Console.WriteLine($"found [{getMatches}] products with post.");
         }
 
-        private static async Task<long> PostSearch(BingECommerceSearch client, string indexId)
+        private static async Task<long> PostSearch(BingCommerceSearch client, string indexId)
         {
             var query = new RequestQuery()
             {
+                MatchAll = "Product",
                 Filter = new StringSetCondition()
                 {
                     Values = new List<string>() { "1", "2" },
@@ -58,7 +59,7 @@ namespace BingECommerceSamples
                 }
             };
 
-            var request = new ECommerceSearchPostRequest()
+            var request = new CommerceSearchPostRequest()
             {
                 Query = query,
                 Items = new RequestItems()
@@ -68,14 +69,14 @@ namespace BingECommerceSamples
                 Aggregations = new List<RequestAggregationBase>() { new RequestDiscoverFacets() { Name = "discovered facets" } }
             };
 
-            var response = await client.Search.PostAsync(TENANT_ID, indexId, request);
+            var response = await client.Search.PostAsync(request, TENANT_ID, indexId);
 
             return response.Items.TotalEstimatedMatches.Value;
         }
 
-        private static async Task<long> GetSearch(BingECommerceSearch client, string indexId)
+        private static async Task<long> GetSearch(BingCommerceSearch client, string indexId)
         {
-            var response = await client.Search.GetAsync(TENANT_ID, indexId, q: "first");
+            var response = await client.Search.GetAsync("first", TENANT_ID, indexId);
 
             return response.Items.TotalEstimatedMatches.Value;
         }
@@ -86,7 +87,7 @@ namespace BingECommerceSamples
                 products.Select(p => $"{p.ProductId},{p.ProductTitle},{p.ProductDescription},{p.ProductPrice},{p.ProductDetailsUrl},{p.arbitraryText},{p.arbitraryNumber}"));
         }
 
-        private static async Task<string> PushData(BingECommerceIngestion ingestionClient, string indexId, string content)
+        private static async Task<string> PushData(BingCommerceIngestion ingestionClient, string indexId, string content)
         {
             var pushResponse = await ingestionClient.PushDataUpdateAsync(content, TENANT_ID, indexId);
 
@@ -98,7 +99,7 @@ namespace BingECommerceSamples
             return JsonConvert.SerializeObject(products);
         }
 
-        private static async Task<string> EnsureIndex(BingECommerceIngestion client)
+        private static async Task<string> EnsureIndex(BingCommerceIngestion client)
         {
             Console.WriteLine($"Trying to find the index with name: {INDEX_NAME}.");
             var allIndexes = await client.GetAllIndexesAsync(TENANT_ID);
@@ -174,18 +175,18 @@ namespace BingECommerceSamples
             return createResponse.Indexes[0].Id;
         }
 
-        private static BingECommerceSearch CreateSearchClient()
+        private static BingCommerceSearch CreateSearchClient()
         {
             Console.WriteLine($"Creating the search client with app id : {APPID}");
 
-            return new BingECommerceSearch(new Microsoft.Bing.ECommerce.Search.AppIdCredentials(APPID));
+            return new BingCommerceSearch(new Microsoft.Bing.Commerce.Search.AppIdCredentials(APPID));
         }
 
-        private static BingECommerceIngestion CreateIngestionClient()
+        private static BingCommerceIngestion CreateIngestionClient()
         {
             Console.WriteLine($"Creating the ingestion client with app id : {APPID}");
 
-            return new BingECommerceIngestion(new Microsoft.Bing.ECommerce.Ingestion.AppIdCredentials(APPID));
+            return new BingCommerceIngestion(new Microsoft.Bing.Commerce.Ingestion.AppIdCredentials(APPID));
         }
     }
 

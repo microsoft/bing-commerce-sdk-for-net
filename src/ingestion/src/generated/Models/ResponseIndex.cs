@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
@@ -24,11 +24,34 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the ResponseIndex class.
         /// </summary>
-        /// <param name="searchScenario">Possible values include: 'Unknown',
-        /// 'Retail', 'Document', 'Hotel'</param>
-        /// <param name="provisioningState">Possible values include: 'Unknown',
+        /// <param name="name">The index's name. The name must be unique per
+        /// tenant, contain only ASCII characters, and have a maximum length of
+        /// 64 characters.</param>
+        /// <param name="description">A description of the index. The
+        /// description is for the tenant's use. The description must contain
+        /// only ASCII characters and have a maximum length of 64
+        /// characters.</param>
+        /// <param name="regions">The array of regions where the customer data
+        /// will be processed and served.</param>
+        /// <param name="searchScenario">The type of search scenario that the
+        /// user is using the index for, which includes Retail, Hotel, and
+        /// Document. Possible values include: 'Unknown', 'Retail', 'Document',
+        /// 'Hotel'</param>
+        /// <param name="searchServices">The array of additional search
+        /// services that the user wants to include for the index, which
+        /// includes Autosuggest and VisualSearch.</param>
+        /// <param name="schemaVersion">The version for the schema of the
+        /// index.</param>
+        /// <param name="fields">The fields that are associated with the
+        /// index.</param>
+        /// <param name="id">The ID that uniquely identifies the index
+        /// definition that had the CRUD operation applied.</param>
+        /// <param name="provisioningState">The current state of provisioning
+        /// for the index definition. Possible values include: 'Unknown',
         /// 'NotStarted', 'Provisioning', 'Deprovisioning', 'Succeeded',
         /// 'Failed'</param>
+        /// <param name="createdDateTime">The date and time when the index was
+        /// created.</param>
         public ResponseIndex(string name = default(string), string description = default(string), IList<Region?> regions = default(IList<Region?>), string searchScenario = default(string), IList<string> searchServices = default(IList<string>), string schemaVersion = default(string), IList<IndexField> fields = default(IList<IndexField>), string id = default(string), string provisioningState = default(string), string createdDateTime = default(string))
             : base(name, description, regions, searchScenario, searchServices, schemaVersion, fields)
         {
@@ -44,18 +67,22 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the ID that uniquely identifies the index definition
+        /// that had the CRUD operation applied.
         /// </summary>
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'NotStarted',
+        /// Gets or sets the current state of provisioning for the index
+        /// definition. Possible values include: 'Unknown', 'NotStarted',
         /// 'Provisioning', 'Deprovisioning', 'Succeeded', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "provisioningState")]
         public string ProvisioningState { get; set; }
 
         /// <summary>
+        /// Gets or sets the date and time when the index was created.
         /// </summary>
         [JsonProperty(PropertyName = "createdDateTime")]
         public string CreatedDateTime { get; set; }

@@ -4,10 +4,13 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for geo-location boundary.
+    /// </summary>
     public partial class GeoBoundaryBase
     {
         /// <summary>

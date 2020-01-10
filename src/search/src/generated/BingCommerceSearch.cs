@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search
+namespace Microsoft.Bing.Commerce.Search
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
@@ -15,7 +15,7 @@ namespace Microsoft.Bing.ECommerce.Search
     using System.Net;
     using System.Net.Http;
 
-    public partial class BingECommerceSearch : ServiceClient<BingECommerceSearch>, IBingECommerceSearch
+    public partial class BingCommerceSearch : ServiceClient<BingCommerceSearch>, IBingCommerceSearch
     {
         /// <summary>
         /// The base URI of the service.
@@ -43,31 +43,31 @@ namespace Microsoft.Bing.ECommerce.Search
         public virtual ISearchOperations Search { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='httpClient'>
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BingECommerceSearch.Dispose(). False: will not dispose provided httpClient</param>
-        protected BingECommerceSearch(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
+        /// True: will dispose the provided httpClient on calling BingCommerceSearch.Dispose(). False: will not dispose provided httpClient</param>
+        protected BingCommerceSearch(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BingECommerceSearch(params DelegatingHandler[] handlers) : base(handlers)
+        protected BingCommerceSearch(params DelegatingHandler[] handlers) : base(handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -75,13 +75,13 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BingECommerceSearch(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        protected BingCommerceSearch(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -92,7 +92,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BingECommerceSearch(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        protected BingCommerceSearch(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -116,7 +116,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BingECommerceSearch(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        protected BingCommerceSearch(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -126,7 +126,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -137,7 +137,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceSearch(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BingCommerceSearch(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (credentials == null)
             {
@@ -151,7 +151,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -160,11 +160,11 @@ namespace Microsoft.Bing.ECommerce.Search
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BingECommerceSearch.Dispose(). False: will not dispose provided httpClient</param>
+        /// True: will dispose the provided httpClient on calling BingCommerceSearch.Dispose(). False: will not dispose provided httpClient</param>
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceSearch(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
+        public BingCommerceSearch(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
         {
             if (credentials == null)
             {
@@ -178,7 +178,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -192,7 +192,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceSearch(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BingCommerceSearch(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (credentials == null)
             {
@@ -206,7 +206,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -220,7 +220,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceSearch(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BingCommerceSearch(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -239,7 +239,7 @@ namespace Microsoft.Bing.ECommerce.Search
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceSearch class.
+        /// Initializes a new instance of the BingCommerceSearch class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -256,7 +256,7 @@ namespace Microsoft.Bing.ECommerce.Search
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceSearch(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BingCommerceSearch(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -284,7 +284,7 @@ namespace Microsoft.Bing.ECommerce.Search
         private void Initialize()
         {
             Search = new SearchOperations(this);
-            BaseUri = new System.Uri("https://www.bingapis.com/api/v1/retail/search");
+            BaseUri = new System.Uri("https://commerce.bing.com/api/search/v1");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,

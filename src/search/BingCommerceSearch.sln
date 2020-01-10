@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BingECommerceSearch", "src\BingECommerceSearch.csproj", "{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BingCommerceSearch", "src\BingCommerceSearch.csproj", "{B21E7C12-7FCA-44D9-8BD8-021DB1478E66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingECommerceSearch.Tests", "tests\BingECommerceSearch.Tests\BingECommerceSearch.Tests.csproj", "{461E67C5-2BB4-4137-BB81-B5E2586895D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingCommerceSearch.Tests", "tests\BingCommerceSearch.Tests\BingCommerceSearch.Tests.csproj", "{461E67C5-2BB4-4137-BB81-B5E2586895D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

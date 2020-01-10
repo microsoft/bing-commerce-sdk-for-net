@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;

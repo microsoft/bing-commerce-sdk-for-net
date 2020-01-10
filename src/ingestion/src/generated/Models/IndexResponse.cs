@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// A response containing a list of indexes.
+    /// </summary>
     public partial class IndexResponse
     {
         /// <summary>
@@ -24,6 +27,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the IndexResponse class.
         /// </summary>
+        /// <param name="indexes">A list of indexes</param>
         public IndexResponse(IList<ResponseIndex> indexes = default(IList<ResponseIndex>))
         {
             Indexes = indexes;
@@ -36,6 +40,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a list of indexes
         /// </summary>
         [JsonProperty(PropertyName = "indexes")]
         public IList<ResponseIndex> Indexes { get; set; }

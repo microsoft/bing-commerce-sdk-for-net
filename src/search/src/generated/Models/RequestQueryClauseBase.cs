@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for a query clause.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Request.QueryClauseBase")]
     public partial class RequestQueryClauseBase
     {

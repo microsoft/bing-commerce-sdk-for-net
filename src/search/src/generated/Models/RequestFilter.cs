@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a filter aggregation.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Filter")]
     public partial class RequestFilter : RequestAggregationBase
     {
@@ -25,10 +28,16 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestFilter class.
         /// </summary>
-        public RequestFilter(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), ConditionBase value = default(ConditionBase))
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
+        /// <param name="value">The condition to match for the
+        /// aggregation.</param>
+        public RequestFilter(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), ConditionBase value = default(ConditionBase), bool? includeCustomizations = default(bool?))
             : base(name, aggregations)
         {
             Value = value;
+            IncludeCustomizations = includeCustomizations;
             CustomInit();
         }
 
@@ -38,9 +47,15 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the condition to match for the aggregation.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public ConditionBase Value { get; set; }
+
+        /// <summary>
+        /// </summary>
+        [JsonProperty(PropertyName = "includeCustomizations")]
+        public bool? IncludeCustomizations { get; set; }
 
     }
 }

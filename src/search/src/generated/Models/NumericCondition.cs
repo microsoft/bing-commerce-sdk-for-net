@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an equivalence condition for a numeric field. It can appear in
+    /// a filter, a boost, or a filter aggregation.
+    /// </summary>
     public partial class NumericCondition : FieldConditionBase
     {
         /// <summary>
@@ -22,8 +26,11 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the NumericCondition class.
         /// </summary>
-        /// <param name="operatorProperty">Possible values include: 'Eq', 'Ne',
-        /// 'Gt', 'Lt', 'Ge', 'Le'</param>
+        /// <param name="field">The name of the field.</param>
+        /// <param name="value">The value to compare the field against.</param>
+        /// <param name="operatorProperty">The comparison operator. Default is
+        /// `gt`. Possible values include: 'Eq', 'Ne', 'Gt', 'Lt', 'Ge',
+        /// 'Le'</param>
         public NumericCondition(string field = default(string), double? value = default(double?), ComparisonOperator? operatorProperty = default(ComparisonOperator?))
             : base(field)
         {
@@ -38,13 +45,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the value to compare the field against.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public double? Value { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Eq', 'Ne', 'Gt', 'Lt', 'Ge',
-        /// 'Le'
+        /// Gets or sets the comparison operator. Default is `gt`. Possible
+        /// values include: 'Eq', 'Ne', 'Gt', 'Lt', 'Ge', 'Le'
         /// </summary>
         [JsonProperty(PropertyName = "operator")]
         public ComparisonOperator? OperatorProperty { get; set; }

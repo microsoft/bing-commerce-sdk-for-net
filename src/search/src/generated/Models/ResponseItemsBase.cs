@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for item results.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Response.ItemsBase")]
     public partial class ResponseItemsBase : ResponseTask
     {
@@ -25,6 +28,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseItemsBase class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="totalEstimatedMatches">An estimated count of the items
+        /// in the full result set.</param>
         public ResponseItemsBase(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), long? totalEstimatedMatches = default(long?))
             : base(errors, debug)
         {
@@ -38,6 +45,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets an estimated count of the items in the full result
+        /// set.
         /// </summary>
         [JsonProperty(PropertyName = "totalEstimatedMatches")]
         public long? TotalEstimatedMatches { get; set; }

@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an expression that modifies the ranking score of results based
+    /// on a condition.
+    /// </summary>
     public partial class ResponseBoostExpression
     {
         /// <summary>
@@ -22,6 +26,9 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseBoostExpression class.
         /// </summary>
+        /// <param name="condition">The condition that triggered a boost in
+        /// ranking score.</param>
+        /// <param name="boost">The magnitude of a boost applied.</param>
         public ResponseBoostExpression(ConditionBase condition = default(ConditionBase), double? boost = default(double?))
         {
             Condition = condition;
@@ -35,11 +42,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the condition that triggered a boost in ranking score.
         /// </summary>
         [JsonProperty(PropertyName = "condition")]
         public ConditionBase Condition { get; set; }
 
         /// <summary>
+        /// Gets or sets the magnitude of a boost applied.
         /// </summary>
         [JsonProperty(PropertyName = "boost")]
         public double? Boost { get; set; }

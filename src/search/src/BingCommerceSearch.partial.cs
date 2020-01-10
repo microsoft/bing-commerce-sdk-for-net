@@ -1,6 +1,7 @@
-﻿namespace Microsoft.Bing.ECommerce.Search
+﻿
+namespace Microsoft.Bing.Commerce.Search
 {
-    public partial class BingECommerceSearch
+    public partial class BingCommerceSearch
     {
         partial void CustomInitialize()
         {

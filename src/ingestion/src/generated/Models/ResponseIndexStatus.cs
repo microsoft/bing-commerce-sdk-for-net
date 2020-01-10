@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// A response that represents a query to an index status within a region.
+    /// </summary>
     public partial class ResponseIndexStatus
     {
         /// <summary>
@@ -34,9 +37,12 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// 'CentralUS', 'SouthCentralUS', 'WestCentralUS', 'SouthAfricaNorth',
         /// 'SouthAfricaWest', 'UKWest', 'UKSouth', 'UAENorth',
         /// 'UAECentral'</param>
-        /// <param name="provisioningState">Possible values include: 'Unknown',
-        /// 'NotStarted', 'Provisioning', 'Deprovisioning', 'Succeeded',
-        /// 'Failed'</param>
+        /// <param name="provisioningState">The provisioning state for the
+        /// index within the specified region. Possible values include:
+        /// 'Unknown', 'NotStarted', 'Provisioning', 'Deprovisioning',
+        /// 'Succeeded', 'Failed'</param>
+        /// <param name="provisioningPercentage">The percentage of provisioning
+        /// for the index withing the region.</param>
         public ResponseIndexStatus(Region? region = default(Region?), string provisioningState = default(string), double? provisioningPercentage = default(double?))
         {
             Region = region;
@@ -67,13 +73,16 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         public Region? Region { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'NotStarted',
+        /// Gets or sets the provisioning state for the index within the
+        /// specified region. Possible values include: 'Unknown', 'NotStarted',
         /// 'Provisioning', 'Deprovisioning', 'Succeeded', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "provisioningState")]
         public string ProvisioningState { get; set; }
 
         /// <summary>
+        /// Gets or sets the percentage of provisioning for the index withing
+        /// the region.
         /// </summary>
         [JsonProperty(PropertyName = "provisioningPercentage")]
         public double? ProvisioningPercentage { get; set; }

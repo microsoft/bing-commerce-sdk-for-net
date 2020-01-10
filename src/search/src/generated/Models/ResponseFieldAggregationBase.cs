@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for aggregations based on fields.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Response.FieldAggregationBase")]
     public partial class ResponseFieldAggregationBase : ResponseAggregation
     {
@@ -27,6 +30,15 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// Initializes a new instance of the ResponseFieldAggregationBase
         /// class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="name">The aggregation name as defined in the
+        /// requset.</param>
+        /// <param name="estimatedCount">An estimated count of items in this
+        /// aggregation.</param>
+        /// <param name="aggregations">The list of child aggregations, if
+        /// any.</param>
+        /// <param name="field">The name of the field.</param>
         public ResponseFieldAggregationBase(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string field = default(string))
             : base(errors, debug, name, estimatedCount, aggregations)
         {
@@ -40,6 +52,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the name of the field.
         /// </summary>
         [JsonProperty(PropertyName = "field")]
         public string Field { get; set; }

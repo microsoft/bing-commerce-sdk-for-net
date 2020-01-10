@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>false</IsPackable>
-    <RootNamespace>Microsoft.Bing.ECommerce.Search.Tests</RootNamespace>
+    <RootNamespace>Microsoft.Bing.Commerce.Search.Tests</RootNamespace>
     <OutputType>Library</OutputType>
     <StartupObject />
   </PropertyGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\BingECommerceSearch.csproj" />
+    <ProjectReference Include="..\..\src\BingCommerceSearch.csproj" />
   </ItemGroup>
 
 </Project>

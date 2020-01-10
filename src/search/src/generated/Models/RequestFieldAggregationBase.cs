@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for an aggregation request that have a
+    /// field.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Request.FieldAggregationBase")]
     public partial class RequestFieldAggregationBase : RequestAggregationBase
     {
@@ -27,6 +31,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// Initializes a new instance of the RequestFieldAggregationBase
         /// class.
         /// </summary>
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
+        /// <param name="field">The field name.</param>
         public RequestFieldAggregationBase(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>), string field = default(string))
             : base(name, aggregations)
         {
@@ -40,6 +48,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the field name.
         /// </summary>
         [JsonProperty(PropertyName = "field")]
         public string Field { get; set; }

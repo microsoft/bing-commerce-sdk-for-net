@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a facet refinement on a category field.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("CategoryRefinement")]
     public partial class ResponseCategoryRefinement : ResponseStringRefinement
     {
@@ -25,6 +28,20 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseCategoryRefinement class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="name">The aggregation name as defined in the
+        /// requset.</param>
+        /// <param name="estimatedCount">An estimated count of items in this
+        /// aggregation.</param>
+        /// <param name="aggregations">The list of child aggregations, if
+        /// any.</param>
+        /// <param name="label">The label to use for the aggregation, that you
+        /// can use to render your UI.</param>
+        /// <param name="value">The actual filter value used to filter the list
+        /// of items.</param>
+        /// <param name="refinements">A list of child category
+        /// refinements.</param>
         public ResponseCategoryRefinement(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string label = default(string), string value = default(string), IList<ResponseCategoryRefinement> refinements = default(IList<ResponseCategoryRefinement>))
             : base(errors, debug, name, estimatedCount, aggregations, label, value)
         {
@@ -38,6 +55,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a list of child category refinements.
         /// </summary>
         [JsonProperty(PropertyName = "refinements")]
         public IList<ResponseCategoryRefinement> Refinements { get; set; }

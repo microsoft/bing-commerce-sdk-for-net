@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// A response that represents the status of a push data update given an
+    /// update id.
+    /// </summary>
     public partial class PushUpdateStatusResponse
     {
         /// <summary>
@@ -24,8 +28,19 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the PushUpdateStatusResponse class.
         /// </summary>
-        /// <param name="status">Possible values include: 'InProgress',
-        /// 'Succeeded', 'PartiallySucceeded', 'Failed'</param>
+        /// <param name="updateId">The id that uniquely identifies the push
+        /// data update.</param>
+        /// <param name="status">The wholistic update status for the push data
+        /// update. Possible values include: 'InProgress', 'Succeeded',
+        /// 'PartiallySucceeded', 'Failed'</param>
+        /// <param name="totalKeys">The total number of items that are part of
+        /// the upate.</param>
+        /// <param name="successfulKeys">The total number of items that have
+        /// successfully been updated.</param>
+        /// <param name="failureMessages">An aggregation of any error messages
+        /// that happened while ingesting any of the records.</param>
+        /// <param name="records">A drill down for the push update status for
+        /// each record.</param>
         public PushUpdateStatusResponse(string updateId = default(string), string status = default(string), int? totalKeys = default(int?), int? successfulKeys = default(int?), IList<string> failureMessages = default(IList<string>), IList<ResponseRecordStatus> records = default(IList<ResponseRecordStatus>))
         {
             UpdateId = updateId;
@@ -43,33 +58,42 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the id that uniquely identifies the push data update.
         /// </summary>
         [JsonProperty(PropertyName = "updateId")]
         public string UpdateId { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'InProgress', 'Succeeded',
+        /// Gets or sets the wholistic update status for the push data update.
+        /// Possible values include: 'InProgress', 'Succeeded',
         /// 'PartiallySucceeded', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
 
         /// <summary>
+        /// Gets or sets the total number of items that are part of the upate.
         /// </summary>
         [JsonProperty(PropertyName = "totalKeys")]
         public int? TotalKeys { get; set; }
 
         /// <summary>
+        /// Gets or sets the total number of items that have successfully been
+        /// updated.
         /// </summary>
         [JsonProperty(PropertyName = "successfulKeys")]
         public int? SuccessfulKeys { get; set; }
 
         /// <summary>
+        /// Gets or sets an aggregation of any error messages that happened
+        /// while ingesting any of the records.
         /// </summary>
         [JsonProperty(PropertyName = "failureMessages")]
         public IList<string> FailureMessages { get; set; }
 
         /// <summary>
+        /// Gets or sets a drill down for the push update status for each
+        /// record.
         /// </summary>
         [JsonProperty(PropertyName = "records")]
         public IList<ResponseRecordStatus> Records { get; set; }

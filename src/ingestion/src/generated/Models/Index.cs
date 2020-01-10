@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Microsoft.Rest;
     using Newtonsoft.Json;
@@ -12,6 +12,10 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Contains the definition for the index. An index consists of a set of
+    /// documents that search operations can be performed upon.
+    /// </summary>
     public partial class Index
     {
         /// <summary>
@@ -25,8 +29,26 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the Index class.
         /// </summary>
-        /// <param name="searchScenario">Possible values include: 'Unknown',
-        /// 'Retail', 'Document', 'Hotel'</param>
+        /// <param name="name">The index's name. The name must be unique per
+        /// tenant, contain only ASCII characters, and have a maximum length of
+        /// 64 characters.</param>
+        /// <param name="description">A description of the index. The
+        /// description is for the tenant's use. The description must contain
+        /// only ASCII characters and have a maximum length of 64
+        /// characters.</param>
+        /// <param name="regions">The array of regions where the customer data
+        /// will be processed and served.</param>
+        /// <param name="searchScenario">The type of search scenario that the
+        /// user is using the index for, which includes Retail, Hotel, and
+        /// Document. Possible values include: 'Unknown', 'Retail', 'Document',
+        /// 'Hotel'</param>
+        /// <param name="searchServices">The array of additional search
+        /// services that the user wants to include for the index, which
+        /// includes Autosuggest and VisualSearch.</param>
+        /// <param name="schemaVersion">The version for the schema of the
+        /// index.</param>
+        /// <param name="fields">The fields that are associated with the
+        /// index.</param>
         public Index(string name = default(string), string description = default(string), IList<Region?> regions = default(IList<Region?>), string searchScenario = default(string), IList<string> searchServices = default(IList<string>), string schemaVersion = default(string), IList<IndexField> fields = default(IList<IndexField>))
         {
             Name = name;
@@ -45,38 +67,52 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the index's name. The name must be unique per tenant,
+        /// contain only ASCII characters, and have a maximum length of 64
+        /// characters.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets a description of the index. The description is for the
+        /// tenant's use. The description must contain only ASCII characters
+        /// and have a maximum length of 64 characters.
         /// </summary>
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
         /// <summary>
+        /// Gets or sets the array of regions where the customer data will be
+        /// processed and served.
         /// </summary>
         [JsonProperty(PropertyName = "regions")]
         public IList<Region?> Regions { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'Unknown', 'Retail',
-        /// 'Document', 'Hotel'
+        /// Gets or sets the type of search scenario that the user is using the
+        /// index for, which includes Retail, Hotel, and Document. Possible
+        /// values include: 'Unknown', 'Retail', 'Document', 'Hotel'
         /// </summary>
         [JsonProperty(PropertyName = "searchScenario")]
         public string SearchScenario { get; set; }
 
         /// <summary>
+        /// Gets or sets the array of additional search services that the user
+        /// wants to include for the index, which includes Autosuggest and
+        /// VisualSearch.
         /// </summary>
         [JsonProperty(PropertyName = "searchServices")]
         public IList<string> SearchServices { get; set; }
 
         /// <summary>
+        /// Gets or sets the version for the schema of the index.
         /// </summary>
         [JsonProperty(PropertyName = "schemaVersion")]
         public string SchemaVersion { get; set; }
 
         /// <summary>
+        /// Gets or sets the fields that are associated with the index.
         /// </summary>
         [JsonProperty(PropertyName = "fields")]
         public IList<IndexField> Fields { get; set; }

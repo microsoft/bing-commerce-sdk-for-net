@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a facet with a category refinement.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("CategoryFacet")]
     public partial class ResponseCategoryFacet : ResponseFacetBase
     {
@@ -25,6 +28,17 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseCategoryFacet class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="name">The aggregation name as defined in the
+        /// requset.</param>
+        /// <param name="estimatedCount">An estimated count of items in this
+        /// aggregation.</param>
+        /// <param name="aggregations">The list of child aggregations, if
+        /// any.</param>
+        /// <param name="field">The name of the field.</param>
+        /// <param name="label">The facet label, that you can use to render
+        /// your UI.</param>
         public ResponseCategoryFacet(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string field = default(string), string label = default(string), IList<ResponseCategoryRefinement> refinements = default(IList<ResponseCategoryRefinement>))
             : base(errors, debug, name, estimatedCount, aggregations, field, label)
         {

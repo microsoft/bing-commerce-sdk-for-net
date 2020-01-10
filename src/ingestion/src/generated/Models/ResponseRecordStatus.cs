@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// A response that represents a status to a push data update for a record.
+    /// </summary>
     public partial class ResponseRecordStatus
     {
         /// <summary>
@@ -22,8 +25,13 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         /// <summary>
         /// Initializes a new instance of the ResponseRecordStatus class.
         /// </summary>
-        /// <param name="status">Possible values include: 'InProgress',
+        /// <param name="recordId">The _itemid for the record being
+        /// updated.</param>
+        /// <param name="status">The status for the push data update regarding
+        /// the specified item id. Possible values include: 'InProgress',
         /// 'Succeeded', 'PartiallySucceeded', 'Failed'</param>
+        /// <param name="errorMessage">An optional error message in case of an
+        /// error while ingesting the record.</param>
         public ResponseRecordStatus(string recordId = default(string), string status = default(string), string errorMessage = default(string))
         {
             RecordId = recordId;
@@ -38,18 +46,22 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the _itemid for the record being updated.
         /// </summary>
         [JsonProperty(PropertyName = "recordId")]
         public string RecordId { get; set; }
 
         /// <summary>
-        /// Gets or sets possible values include: 'InProgress', 'Succeeded',
-        /// 'PartiallySucceeded', 'Failed'
+        /// Gets or sets the status for the push data update regarding the
+        /// specified item id. Possible values include: 'InProgress',
+        /// 'Succeeded', 'PartiallySucceeded', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
 
         /// <summary>
+        /// Gets or sets an optional error message in case of an error while
+        /// ingesting the record.
         /// </summary>
         [JsonProperty(PropertyName = "errorMessage")]
         public string ErrorMessage { get; set; }

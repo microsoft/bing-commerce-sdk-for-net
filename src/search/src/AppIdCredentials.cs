@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Bing.ECommerce.Search
+﻿namespace Microsoft.Bing.Commerce.Search
 {
     using Microsoft.Rest;
     using System;

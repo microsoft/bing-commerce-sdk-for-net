@@ -4,40 +4,41 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Microsoft.Bing.ECommerce.Search.Tests
+namespace Microsoft.Bing.Commerce.Search.Tests
 {
     using System;
     using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Web;
-    using Microsoft.Bing.ECommerce.Search.Models;
+    using Microsoft.Bing.Commerce.Search.Models;
+    using Microsoft.Rest;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Newtonsoft.Json.Linq;
 
     [TestClass]
     public class SearchTests
     {
-        private static readonly AppIdCredentials Credentials = new AppIdCredentials(
-            Environment.GetEnvironmentVariable("SEARCH_APPID"));
-        private static readonly string TenantId = Environment.GetEnvironmentVariable("SEARCH_TENANT");
+
+        private static readonly ServiceClientCredentials Credentials = new AppIdCredentials(Environment.GetEnvironmentVariable("SEARCH_APPID"));
+        private static readonly string TenantId =  Environment.GetEnvironmentVariable("SEARCH_TENANT");
         private static readonly string IndexId = Environment.GetEnvironmentVariable("SEARCH_INDEX");
 
         [TestMethod]
         public async Task Search_MatchItems()
         {
-            var brs = new BingECommerceSearch(Credentials, new TestTrafficHandler());
+            var brs = new BingCommerceSearch(Credentials, new TestTrafficHandler());
 
-            var request = new ECommerceSearchPostRequest()
+            var request = new CommerceSearchPostRequest()
             {
-                Query = new RequestQuery() { MatchAll = "headphones" },
+                Query = new RequestQuery() { MatchAll = "diamond" },
                 Items = new RequestItems()
                 {
-                    Select = new[] { "_itemId", "title" }
+                    Select = new[] { "_itemId", "name" }
                 }
             };
 
-            var response = await brs.Search.PostAsync(TenantId, IndexId, request);
+            var response = await brs.Search.PostAsync(request, TenantId, IndexId);
             Assert.IsNotNull(response, "Expected non-null response");
 
             var items = response.Items as ResponseItems;
@@ -56,21 +57,19 @@ namespace Microsoft.Bing.ECommerce.Search.Tests
                 var fields = item.Fields as JObject;
                 Assert.IsNotNull(fields, "Expected item fields to be a JObject at position " + i);
 
-                var title = fields.Value<string>("title");
+                var title = fields.Value<string>("name");
                 Assert.IsNotNull(title, "Expected item to have a title at position " + i);
             }
         }
 
-
-
         [TestMethod]
         public async Task Search_DiscoverFacets()
         {
-            var brs = new BingECommerceSearch(Credentials, new TestTrafficHandler());
+            var brs = new BingCommerceSearch(Credentials, new TestTrafficHandler());
 
-            var request = new ECommerceSearchPostRequest()
+            var request = new CommerceSearchPostRequest()
             {
-                Query = new RequestQuery() { MatchAll = "headphones" },
+                Query = new RequestQuery() { MatchAll = "diamond" },
                 Items = new RequestItems(),
                 Aggregations = new RequestAggregationBase[]
                 {
@@ -78,7 +77,7 @@ namespace Microsoft.Bing.ECommerce.Search.Tests
                 }
             };
 
-            var response = await brs.Search.PostAsync(TenantId, IndexId, request);
+            var response = await brs.Search.PostAsync(request, TenantId, IndexId);
             Assert.IsNotNull(response, "Expected non-null response");
 
             var items = response.Items as ResponseItems;

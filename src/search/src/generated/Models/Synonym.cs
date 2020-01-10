@@ -4,13 +4,17 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a set of alternate terms (or phrases) that can be applied to
+    /// request query.
+    /// </summary>
     public partial class Synonym
     {
         /// <summary>
@@ -24,6 +28,8 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the Synonym class.
         /// </summary>
+        /// <param name="synonymId">The id for the saved synonym.</param>
+        /// <param name="synonyms">The alternate terms to apply</param>
         public Synonym(string synonymId = default(string), IList<string> synonyms = default(IList<string>))
         {
             SynonymId = synonymId;
@@ -37,11 +43,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the id for the saved synonym.
         /// </summary>
         [JsonProperty(PropertyName = "synonymId")]
         public string SynonymId { get; set; }
 
         /// <summary>
+        /// Gets or sets the alternate terms to apply
         /// </summary>
         [JsonProperty(PropertyName = "synonyms")]
         public IList<string> Synonyms { get; set; }

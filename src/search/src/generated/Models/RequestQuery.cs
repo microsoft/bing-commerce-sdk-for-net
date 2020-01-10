@@ -4,13 +4,19 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Represents the query that determines the result set. Note that query
+    /// must have a matchAll, value, or filter field. The matchAll and value
+    /// fields cannot both be present. You may create a query with only a
+    /// filter to **browse** (for example: a category).
+    /// </summary>
     public partial class RequestQuery
     {
         /// <summary>
@@ -24,7 +30,22 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestQuery class.
         /// </summary>
-        public RequestQuery(string matchAll = default(string), RequestQueryClauseBase value = default(RequestQueryClauseBase), ConditionBase filter = default(ConditionBase), IList<RequestBoostExpression> boosts = default(IList<RequestBoostExpression>), bool? alteration = default(bool?), IList<Synonym> synonyms = default(IList<Synonym>))
+        /// <param name="matchAll">A query that matches against all searchable
+        /// fields.</param>
+        /// <param name="value">An instance of queryclausebase specifying
+        /// search conditions. Its mutually exclusive with matchall.</param>
+        /// <param name="filter">A filter to apply on the matching result set,
+        /// or on all items if no match is specified.</param>
+        /// <param name="boosts">The set of boosts to apply to the result
+        /// set.</param>
+        /// <param name="alteration">A boolean flag to enable or disable query
+        /// alteration.</param>
+        /// <param name="synonyms">A set of alternate terms (or phrases) that
+        /// can be applied to request query. The applied synonyms are used for
+        /// both text-matching and result-ranking stages of search.</param>
+        /// <param name="excludeBusinessRules">Business rule ids to skip
+        /// applying from request search instance.</param>
+        public RequestQuery(string matchAll = default(string), RequestQueryClauseBase value = default(RequestQueryClauseBase), ConditionBase filter = default(ConditionBase), IList<RequestBoostExpression> boosts = default(IList<RequestBoostExpression>), bool? alteration = default(bool?), IList<Synonym> synonyms = default(IList<Synonym>), IList<string> excludeBusinessRules = default(IList<string>))
         {
             MatchAll = matchAll;
             Value = value;
@@ -32,6 +53,7 @@ namespace Microsoft.Bing.ECommerce.Search.Models
             Boosts = boosts;
             Alteration = alteration;
             Synonyms = synonyms;
+            ExcludeBusinessRules = excludeBusinessRules;
             CustomInit();
         }
 
@@ -41,34 +63,51 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a query that matches against all searchable fields.
         /// </summary>
         [JsonProperty(PropertyName = "matchAll")]
         public string MatchAll { get; set; }
 
         /// <summary>
+        /// Gets or sets an instance of queryclausebase specifying search
+        /// conditions. Its mutually exclusive with matchall.
         /// </summary>
         [JsonProperty(PropertyName = "value")]
         public RequestQueryClauseBase Value { get; set; }
 
         /// <summary>
+        /// Gets or sets a filter to apply on the matching result set, or on
+        /// all items if no match is specified.
         /// </summary>
         [JsonProperty(PropertyName = "filter")]
         public ConditionBase Filter { get; set; }
 
         /// <summary>
+        /// Gets or sets the set of boosts to apply to the result set.
         /// </summary>
         [JsonProperty(PropertyName = "boosts")]
         public IList<RequestBoostExpression> Boosts { get; set; }
 
         /// <summary>
+        /// Gets or sets a boolean flag to enable or disable query alteration.
         /// </summary>
         [JsonProperty(PropertyName = "alteration")]
         public bool? Alteration { get; set; }
 
         /// <summary>
+        /// Gets or sets a set of alternate terms (or phrases) that can be
+        /// applied to request query. The applied synonyms are used for both
+        /// text-matching and result-ranking stages of search.
         /// </summary>
         [JsonProperty(PropertyName = "synonyms")]
         public IList<Synonym> Synonyms { get; set; }
+
+        /// <summary>
+        /// Gets or sets business rule ids to skip applying from request search
+        /// instance.
+        /// </summary>
+        [JsonProperty(PropertyName = "excludeBusinessRules")]
+        public IList<string> ExcludeBusinessRules { get; set; }
 
     }
 }

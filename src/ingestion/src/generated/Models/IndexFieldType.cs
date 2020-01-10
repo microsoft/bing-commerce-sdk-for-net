@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion.Models
+namespace Microsoft.Bing.Commerce.Ingestion.Models
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
@@ -116,7 +116,9 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
         [EnumMember(Value = "PhoneNumber")]
         PhoneNumber,
         [EnumMember(Value = "Barcode")]
-        Barcode
+        Barcode,
+        [EnumMember(Value = "SecondaryImageUrls")]
+        SecondaryImageUrls
     }
     internal static class IndexFieldTypeEnumExtension
     {
@@ -229,6 +231,8 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
                     return "PhoneNumber";
                 case IndexFieldType.Barcode:
                     return "Barcode";
+                case IndexFieldType.SecondaryImageUrls:
+                    return "SecondaryImageUrls";
             }
             return null;
         }
@@ -337,6 +341,8 @@ namespace Microsoft.Bing.ECommerce.Ingestion.Models
                     return IndexFieldType.PhoneNumber;
                 case "Barcode":
                     return IndexFieldType.Barcode;
+                case "SecondaryImageUrls":
+                    return IndexFieldType.SecondaryImageUrls;
             }
             return null;
         }

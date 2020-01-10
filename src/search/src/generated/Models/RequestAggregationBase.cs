@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the abstract base type for an aggregation request.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Request.AggregationBase")]
     public partial class RequestAggregationBase
     {
@@ -25,6 +28,9 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestAggregationBase class.
         /// </summary>
+        /// <param name="name">A label that you specify for your aggregations,
+        /// which the API passes through and returns with the response.</param>
+        /// <param name="aggregations">A list of child aggregations.</param>
         public RequestAggregationBase(string name = default(string), IList<RequestAggregationBase> aggregations = default(IList<RequestAggregationBase>))
         {
             Name = name;
@@ -38,11 +44,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a label that you specify for your aggregations, which
+        /// the API passes through and returns with the response.
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets a list of child aggregations.
         /// </summary>
         [JsonProperty(PropertyName = "aggregations")]
         public IList<RequestAggregationBase> Aggregations { get; set; }

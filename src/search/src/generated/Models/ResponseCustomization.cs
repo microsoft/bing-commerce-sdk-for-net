@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines the customizations applied to the search operation.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Response.Customization")]
     public partial class ResponseCustomization : ResponseTask
     {
@@ -25,6 +28,16 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseCustomization class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="queryAlteration">A boolean to determine if query
+        /// alteration have been applied to the search operation.</param>
+        /// <param name="synonyms">The synonyms used to apply the search
+        /// query.</param>
+        /// <param name="filter">The filters applied to the search
+        /// result.</param>
+        /// <param name="boosts">The boost expressions applied to the search
+        /// result.</param>
         public ResponseCustomization(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), bool? queryAlteration = default(bool?), IList<Synonym> synonyms = default(IList<Synonym>), IList<string> rules = default(IList<string>), ConditionBase filter = default(ConditionBase), IList<ResponseBoostExpression> boosts = default(IList<ResponseBoostExpression>))
             : base(errors, debug)
         {
@@ -42,11 +55,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a boolean to determine if query alteration have been
+        /// applied to the search operation.
         /// </summary>
         [JsonProperty(PropertyName = "queryAlteration")]
         public bool? QueryAlteration { get; set; }
 
         /// <summary>
+        /// Gets or sets the synonyms used to apply the search query.
         /// </summary>
         [JsonProperty(PropertyName = "synonyms")]
         public IList<Synonym> Synonyms { get; set; }
@@ -57,11 +73,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         public IList<string> Rules { get; set; }
 
         /// <summary>
+        /// Gets or sets the filters applied to the search result.
         /// </summary>
         [JsonProperty(PropertyName = "filter")]
         public ConditionBase Filter { get; set; }
 
         /// <summary>
+        /// Gets or sets the boost expressions applied to the search result.
         /// </summary>
         [JsonProperty(PropertyName = "boosts")]
         public IList<ResponseBoostExpression> Boosts { get; set; }

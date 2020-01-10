@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Ingestion
+namespace Microsoft.Bing.Commerce.Ingestion
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
@@ -17,7 +17,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
     using System.Threading;
     using System.Threading.Tasks;
 
-    public partial class BingECommerceIngestion : ServiceClient<BingECommerceIngestion>, IBingECommerceIngestion
+    public partial class BingCommerceIngestion : ServiceClient<BingCommerceIngestion>, IBingCommerceIngestion
     {
         /// <summary>
         /// The base URI of the service.
@@ -40,31 +40,31 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         public ServiceClientCredentials Credentials { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='httpClient'>
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BingECommerceIngestion.Dispose(). False: will not dispose provided httpClient</param>
-        protected BingECommerceIngestion(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
+        /// True: will dispose the provided httpClient on calling BingCommerceIngestion.Dispose(). False: will not dispose provided httpClient</param>
+        protected BingCommerceIngestion(HttpClient httpClient, bool disposeHttpClient) : base(httpClient, disposeHttpClient)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BingECommerceIngestion(params DelegatingHandler[] handlers) : base(handlers)
+        protected BingCommerceIngestion(params DelegatingHandler[] handlers) : base(handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='rootHandler'>
         /// Optional. The http client handler used to handle http transport.
@@ -72,13 +72,13 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected BingECommerceIngestion(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        protected BingCommerceIngestion(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
         {
             Initialize();
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -89,7 +89,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BingECommerceIngestion(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        protected BingCommerceIngestion(System.Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -99,7 +99,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -113,7 +113,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        protected BingECommerceIngestion(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        protected BingCommerceIngestion(System.Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -123,7 +123,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -134,7 +134,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceIngestion(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BingCommerceIngestion(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (credentials == null)
             {
@@ -148,7 +148,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -157,11 +157,11 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// HttpClient to be used
         /// </param>
         /// <param name='disposeHttpClient'>
-        /// True: will dispose the provided httpClient on calling BingECommerceIngestion.Dispose(). False: will not dispose provided httpClient</param>
+        /// True: will dispose the provided httpClient on calling BingCommerceIngestion.Dispose(). False: will not dispose provided httpClient</param>
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceIngestion(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
+        public BingCommerceIngestion(ServiceClientCredentials credentials, HttpClient httpClient, bool disposeHttpClient) : this(httpClient, disposeHttpClient)
         {
             if (credentials == null)
             {
@@ -175,7 +175,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='credentials'>
         /// Required. Subscription credentials which uniquely identify client subscription.
@@ -189,7 +189,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceIngestion(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BingCommerceIngestion(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (credentials == null)
             {
@@ -203,7 +203,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -217,7 +217,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceIngestion(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        public BingCommerceIngestion(System.Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
         {
             if (baseUri == null)
             {
@@ -236,7 +236,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <summary>
-        /// Initializes a new instance of the BingECommerceIngestion class.
+        /// Initializes a new instance of the BingCommerceIngestion class.
         /// </summary>
         /// <param name='baseUri'>
         /// Optional. The base URI of the service.
@@ -253,7 +253,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <exception cref="System.ArgumentNullException">
         /// Thrown when a required parameter is null
         /// </exception>
-        public BingECommerceIngestion(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        public BingCommerceIngestion(System.Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
         {
             if (baseUri == null)
             {
@@ -280,7 +280,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// </summary>
         private void Initialize()
         {
-            BaseUri = new System.Uri("https://www.bingapis.com/api/v1");
+            BaseUri = new System.Uri("https://commerce.bing.com/api/ingestion/v1");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
@@ -308,11 +308,20 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             };
             CustomInitialize();
         }
+        /// <summary>
+        /// Create an index.
+        /// </summary>
+        /// <remarks>
+        /// Creates a definition of the tenant's index.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='body'>
+        /// An Index object that describes the index definition to add.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -360,7 +369,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
@@ -469,9 +478,17 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Get list of index definitions.
+        /// </summary>
+        /// <remarks>
+        /// Get list of index definitions that you defined for a tenant.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -514,7 +531,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
@@ -617,11 +634,20 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Delete an index.
+        /// </summary>
+        /// <remarks>
+        /// Delete an index definition along with all the catalog.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -669,7 +695,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -773,13 +799,23 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Updates an index with id.
+        /// </summary>
+        /// <remarks>
+        /// Update the definition for your index.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='body'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -832,7 +868,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -942,11 +978,20 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Get index definition by id.
+        /// </summary>
+        /// <remarks>
+        /// Get a specific index definition for a tenant.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -994,7 +1039,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -1098,11 +1143,235 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Delete documents from your catalog.
+        /// </summary>
+        /// <remarks>
+        /// Delete documents from your index's catalog.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
+        /// </param>
+        /// <param name='body'>
+        /// The set of document ids to delete.
+        /// </param>
+        /// <param name='customHeaders'>
+        /// Headers that will be added to request.
+        /// </param>
+        /// <param name='cancellationToken'>
+        /// The cancellation token.
+        /// </param>
+        /// <exception cref="HttpOperationException">
+        /// Thrown when the operation returned an invalid status code
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// Thrown when unable to deserialize the response
+        /// </exception>
+        /// <exception cref="ValidationException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException">
+        /// Thrown when a required parameter is null
+        /// </exception>
+        /// <return>
+        /// A response object containing the response body and response headers.
+        /// </return>
+        public async Task<HttpOperationResponse<DeleteDocumentsResponse>> DeleteDocumentsWithHttpMessagesAsync(string tenantid, string indexid, string subscriptionId = default(string), RequestsStringSet body = default(RequestsStringSet), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (body != null)
+            {
+                body.Validate();
+            }
+            if (tenantid == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "tenantid");
+            }
+            if (indexid == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "indexid");
+            }
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
+            string _invocationId = null;
+            if (_shouldTrace)
+            {
+                _invocationId = ServiceClientTracing.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
+                tracingParameters.Add("subscriptionId", subscriptionId);
+                tracingParameters.Add("body", body);
+                tracingParameters.Add("tenantid", tenantid);
+                tracingParameters.Add("indexid", indexid);
+                tracingParameters.Add("cancellationToken", cancellationToken);
+                ServiceClientTracing.Enter(_invocationId, this, "DeleteDocuments", tracingParameters);
+            }
+            // Construct URL
+            var _baseUrl = BaseUri.AbsoluteUri;
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/deletedata").ToString();
+            _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
+            _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
+            // Create HTTP transport objects
+            var _httpRequest = new HttpRequestMessage();
+            HttpResponseMessage _httpResponse = null;
+            _httpRequest.Method = new HttpMethod("POST");
+            _httpRequest.RequestUri = new System.Uri(_url);
+            // Set Headers
+            if (subscriptionId != null)
+            {
+                if (_httpRequest.Headers.Contains("SubscriptionId"))
+                {
+                    _httpRequest.Headers.Remove("SubscriptionId");
+                }
+                _httpRequest.Headers.TryAddWithoutValidation("SubscriptionId", subscriptionId);
+            }
+
+
+            if (customHeaders != null)
+            {
+                foreach(var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
+
+            // Serialize Request
+            string _requestContent = null;
+            if(body != null)
+            {
+                _requestContent = SafeJsonConvert.SerializeObject(body, SerializationSettings);
+                _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
+                _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
+            }
+            // Set Credentials
+            if (Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
+            }
+            cancellationToken.ThrowIfCancellationRequested();
+            _httpResponse = await HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
+            }
+            HttpStatusCode _statusCode = _httpResponse.StatusCode;
+            cancellationToken.ThrowIfCancellationRequested();
+            string _responseContent = null;
+            if ((int)_statusCode != 200 && (int)_statusCode != 206 && (int)_statusCode != 400)
+            {
+                var ex = new HttpOperationException(string.Format("Operation returned an invalid status code '{0}'", _statusCode));
+                if (_httpResponse.Content != null) {
+                    _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                }
+                else {
+                    _responseContent = string.Empty;
+                }
+                ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
+                ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
+                if (_shouldTrace)
+                {
+                    ServiceClientTracing.Error(_invocationId, ex);
+                }
+                _httpRequest.Dispose();
+                if (_httpResponse != null)
+                {
+                    _httpResponse.Dispose();
+                }
+                throw ex;
+            }
+            // Create Result
+            var _result = new HttpOperationResponse<DeleteDocumentsResponse>();
+            _result.Request = _httpRequest;
+            _result.Response = _httpResponse;
+            // Deserialize Response
+            if ((int)_statusCode == 200)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<DeleteDocumentsResponse>(_responseContent, DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 206)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<DeleteDocumentsResponse>(_responseContent, DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
+            }
+            // Deserialize Response
+            if ((int)_statusCode == 400)
+            {
+                _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
+                try
+                {
+                    _result.Body = SafeJsonConvert.DeserializeObject<DeleteDocumentsResponse>(_responseContent, DeserializationSettings);
+                }
+                catch (JsonException ex)
+                {
+                    _httpRequest.Dispose();
+                    if (_httpResponse != null)
+                    {
+                        _httpResponse.Dispose();
+                    }
+                    throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
+                }
+            }
+            if (_shouldTrace)
+            {
+                ServiceClientTracing.Exit(_invocationId, _result);
+            }
+            return _result;
+        }
+
+        /// <summary>
+        /// Get index status by id.
+        /// </summary>
+        /// <remarks>
+        /// Get the detailed status of your index in each supported region.
+        /// </remarks>
+        /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
+        /// </param>
+        /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
+        /// </param>
+        /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1150,7 +1419,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/status").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/status").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -1254,17 +1523,33 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Push catalog data.
+        /// </summary>
+        /// <remarks>
+        /// This method pushes updates to your your index data to Bing. This is an
+        /// asynchronous process. To upload your index data to Bing, you'll send a push
+        /// request that contains your index data.
+        /// </remarks>
         /// <param name='body'>
         /// </param>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='notransform'>
+        /// This disables transformation config processing if the config was uploaded
+        /// for some index. It's useful when the data is already transformed and is
+        /// matching the index definition. Default is `false`
         /// </param>
         /// <param name='updateid'>
+        /// An id to uniquely identify the push update request in order to be able to
+        /// track it down later.
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1319,7 +1604,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/pushdata").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/pushdata").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             List<string> _queryParameters = new List<string>();
@@ -1442,13 +1727,24 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// .
+        /// </summary>
+        /// <remarks>
+        /// .
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='updateid'>
+        /// An id to uniquely identify the push update request in order to be able to
+        /// track it down later.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1501,7 +1797,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/status/{updateid}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/status/{updateid}").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             _url = _url.Replace("{updateid}", System.Uri.EscapeDataString(updateid));
@@ -1606,11 +1902,21 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Delete your index's transformation config.
+        /// </summary>
+        /// <remarks>
+        /// Delete the transformation config that currently aplies to data you push to
+        /// your index.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1658,7 +1964,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/transformationconfig").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/transformation").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -1762,13 +2068,23 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Retrieve your current index's transformation config.
+        /// </summary>
+        /// <remarks>
+        /// Retrieve the transformation config that currently applies to data you push
+        /// to your index.
+        /// </remarks>
         /// <param name='body'>
         /// </param>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1821,7 +2137,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/transformationconfig").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/transformation").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -1931,11 +2247,20 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Get ingestion status.
+        /// </summary>
+        /// <remarks>
+        /// Track your ingestion by querying the status.
+        /// </remarks>
         /// <param name='tenantid'>
+        /// The ID that uniquely identifies the tenant that the index belongs to.
         /// </param>
         /// <param name='indexid'>
+        /// The ID that uniquely identifies the index definition to manage.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -1983,7 +2308,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/{tenantid}/indexes/{indexid}/transformationconfig").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "{tenantid}/indexes/{indexid}/transformation").ToString();
             _url = _url.Replace("{tenantid}", System.Uri.EscapeDataString(tenantid));
             _url = _url.Replace("{indexid}", System.Uri.EscapeDataString(indexid));
             // Create HTTP transport objects
@@ -2087,9 +2412,17 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Create a transformation config.
+        /// </summary>
+        /// <remarks>
+        /// Upload a new transformation config and set it as the transformation config
+        /// that applies to data you push to your index.
+        /// </remarks>
         /// <param name='body'>
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -2132,7 +2465,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/transformation/tryout").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "transformation/tryout").ToString();
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
             HttpResponseMessage _httpResponse = null;
@@ -2240,9 +2573,20 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             return _result;
         }
 
+        /// <summary>
+        /// Upload a trytout config.
+        /// </summary>
+        /// <remarks>
+        /// Upload a transformation config that you can use to test data transformation
+        /// on the cloud.
+        /// </remarks>
+        /// <param name='body'>
+        /// </param>
         /// <param name='tryoutid'>
+        /// The transformation tryout config id.
         /// </param>
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -2265,8 +2609,12 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         /// <return>
         /// A response object containing the response body and response headers.
         /// </return>
-        public async Task<HttpOperationResponse<TransformationTryoutResponse>> ExecuteTryOutConfigWithHttpMessagesAsync(string tryoutid, string subscriptionId = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<HttpOperationResponse<TransformationTryoutResponse>> ExecuteTryOutConfigWithHttpMessagesAsync(string body, string tryoutid, string subscriptionId = default(string), Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
+            if (body == null)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "body");
+            }
             if (tryoutid == null)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "tryoutid");
@@ -2279,13 +2627,14 @@ namespace Microsoft.Bing.ECommerce.Ingestion
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>();
                 tracingParameters.Add("subscriptionId", subscriptionId);
+                tracingParameters.Add("body", body);
                 tracingParameters.Add("tryoutid", tryoutid);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 ServiceClientTracing.Enter(_invocationId, this, "ExecuteTryOutConfig", tracingParameters);
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/transformation/tryout/{tryoutid}").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "transformation/tryout/{tryoutid}").ToString();
             _url = _url.Replace("{tryoutid}", System.Uri.EscapeDataString(tryoutid));
             // Create HTTP transport objects
             var _httpRequest = new HttpRequestMessage();
@@ -2317,6 +2666,12 @@ namespace Microsoft.Bing.ECommerce.Ingestion
 
             // Serialize Request
             string _requestContent = null;
+            if(body != null)
+            {
+                _requestContent = SafeJsonConvert.SerializeObject(body, SerializationSettings);
+                _httpRequest.Content = new StringContent(_requestContent, System.Text.Encoding.UTF8);
+                _httpRequest.Content.Headers.ContentType =System.Net.Http.Headers.MediaTypeHeaderValue.Parse("text/plain");
+            }
             // Set Credentials
             if (Credentials != null)
             {
@@ -2389,9 +2744,11 @@ namespace Microsoft.Bing.ECommerce.Ingestion
         }
 
         /// <param name='subscriptionId'>
+        /// Bing developer subcription id
         /// </param>
         /// <param name='format'>
-        /// Possible values include: 'Unknown', 'LDJson', 'CSV', 'TSV', 'JsonArray'
+        /// The push data update document format. Possible values include: 'Unknown',
+        /// 'LDJson', 'CSV', 'TSV', 'JsonArray'
         /// </param>
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
@@ -2424,7 +2781,7 @@ namespace Microsoft.Bing.ECommerce.Ingestion
             }
             // Construct URL
             var _baseUrl = BaseUri.AbsoluteUri;
-            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "retail/ingestion/schemadetection").ToString();
+            var _url = new System.Uri(new System.Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "schemadetection").ToString();
             List<string> _queryParameters = new List<string>();
             if (format != null)
             {

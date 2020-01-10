@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines how to return items from the result set.
+    /// </summary>
     public partial class RequestItems
     {
         /// <summary>
@@ -24,6 +27,16 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestItems class.
         /// </summary>
+        /// <param name="select">A list of fields that should appear for each
+        /// item of the response.</param>
+        /// <param name="orderBy">A comma-separated list of OData order syntax
+        /// expressions.</param>
+        /// <param name="top">The number of results to return. It can be used
+        /// for pagination.</param>
+        /// <param name="skip">The number of results to skip in the result set.
+        /// Supports pagination.</param>
+        /// <param name="dedupe">A boolean to specify whether you want the
+        /// result set to exclude duplicates. Default is `false`.</param>
         public RequestItems(IList<string> select = default(IList<string>), string orderBy = default(string), int? top = default(int?), int? skip = default(int?), bool? dedupe = default(bool?))
         {
             Select = select;
@@ -40,26 +53,36 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets a list of fields that should appear for each item of
+        /// the response.
         /// </summary>
         [JsonProperty(PropertyName = "select")]
         public IList<string> Select { get; set; }
 
         /// <summary>
+        /// Gets or sets a comma-separated list of OData order syntax
+        /// expressions.
         /// </summary>
         [JsonProperty(PropertyName = "orderBy")]
         public string OrderBy { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of results to return. It can be used for
+        /// pagination.
         /// </summary>
         [JsonProperty(PropertyName = "top")]
         public int? Top { get; set; }
 
         /// <summary>
+        /// Gets or sets the number of results to skip in the result set.
+        /// Supports pagination.
         /// </summary>
         [JsonProperty(PropertyName = "skip")]
         public int? Skip { get; set; }
 
         /// <summary>
+        /// Gets or sets a boolean to specify whether you want the result set
+        /// to exclude duplicates. Default is `false`.
         /// </summary>
         [JsonProperty(PropertyName = "dedupe")]
         public bool? Dedupe { get; set; }

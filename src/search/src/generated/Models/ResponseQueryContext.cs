@@ -4,13 +4,16 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Defines an object that contains the result of query alteration.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("Response.QueryContext")]
     public partial class ResponseQueryContext : ResponseTask
     {
@@ -25,6 +28,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseQueryContext class.
         /// </summary>
+        /// <param name="errors">A list of errors that happened to the task, if
+        /// any.</param>
+        /// <param name="originalQuery">The user's query string as
+        /// entered.</param>
+        /// <param name="alteredQuery">The altered query string that the API
+        /// actually uses for the query (for example, corrected
+        /// spelling).</param>
         public ResponseQueryContext(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string originalQuery = default(string), string alteredQuery = default(string))
             : base(errors, debug)
         {
@@ -39,11 +49,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the user's query string as entered.
         /// </summary>
         [JsonProperty(PropertyName = "originalQuery")]
         public string OriginalQuery { get; set; }
 
         /// <summary>
+        /// Gets or sets the altered query string that the API actually uses
+        /// for the query (for example, corrected spelling).
         /// </summary>
         [JsonProperty(PropertyName = "alteredQuery")]
         public string AlteredQuery { get; set; }

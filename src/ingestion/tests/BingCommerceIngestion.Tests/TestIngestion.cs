@@ -1,8 +1,8 @@
-namespace Microsoft.BingECommerce.Ingestion.Tests
+namespace Microsoft.Bing.Commerce.Ingestion.Tests
 {
-    using Microsoft.Bing.ECommerce.Ingestion;
+    using Microsoft.Bing.Commerce.Ingestion;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Microsoft.Bing.ECommerce.Ingestion.Models;
+    using Microsoft.Bing.Commerce.Ingestion.Models;
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Threading;
@@ -112,7 +112,7 @@ namespace Microsoft.BingECommerce.Ingestion.Tests
             Assert.IsNotNull(statusResposne.Status, "Expected non-null status");
         }
 
-        private async Task<string> EnsureTestIndex(BingECommerceIngestion client)
+        private async Task<string> EnsureTestIndex(BingCommerceIngestion client)
         {
             var allIndexes = await client.GetAllIndexesAsync(TENANT_ID);
 
@@ -141,9 +141,9 @@ namespace Microsoft.BingECommerce.Ingestion.Tests
 
         }
 
-        private BingECommerceIngestion CreateClient()
+        private BingCommerceIngestion CreateClient()
         {
-            return new BingECommerceIngestion(Credentials, new TestTrafficHandler());
+            return new BingCommerceIngestion(Credentials, new TestTrafficHandler());
         }
 
         public class TestTrafficHandler : DelegatingHandler

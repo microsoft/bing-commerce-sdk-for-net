@@ -4,11 +4,14 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines a geographical box to match the results that lie within it.
+    /// </summary>
     public partial class GeoBoundingBox : GeoBoundaryBase
     {
         /// <summary>
@@ -22,6 +25,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the GeoBoundingBox class.
         /// </summary>
+        /// <param name="topLeft">The top-left corner geo-location of the
+        /// box.</param>
+        /// <param name="bottomRight">The bottom-right corner geo-location of
+        /// the box.</param>
         public GeoBoundingBox(GeoPoint topLeft = default(GeoPoint), GeoPoint bottomRight = default(GeoPoint))
         {
             TopLeft = topLeft;
@@ -35,11 +42,13 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the top-left corner geo-location of the box.
         /// </summary>
         [JsonProperty(PropertyName = "topLeft")]
         public GeoPoint TopLeft { get; set; }
 
         /// <summary>
+        /// Gets or sets the bottom-right corner geo-location of the box.
         /// </summary>
         [JsonProperty(PropertyName = "bottomRight")]
         public GeoPoint BottomRight { get; set; }

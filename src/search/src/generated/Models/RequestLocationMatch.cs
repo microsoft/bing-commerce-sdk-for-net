@@ -4,11 +4,15 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Bing.ECommerce.Search.Models
+namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
     using System.Linq;
 
+    /// <summary>
+    /// Defines user location to match. If an explicit location is specified in
+    /// a match query, this is ignored.
+    /// </summary>
     [Newtonsoft.Json.JsonObject("LocationMatch")]
     public partial class RequestLocationMatch : RequestQueryClauseBase
     {
@@ -23,6 +27,10 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the RequestLocationMatch class.
         /// </summary>
+        /// <param name="center">The geo-location that you wish for the search
+        /// to be applied around.</param>
+        /// <param name="radius">The accuracy of the search on that location in
+        /// meters.</param>
         public RequestLocationMatch(GeoPoint center = default(GeoPoint), double? radius = default(double?))
         {
             Center = center;
@@ -36,11 +44,14 @@ namespace Microsoft.Bing.ECommerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
+        /// Gets or sets the geo-location that you wish for the search to be
+        /// applied around.
         /// </summary>
         [JsonProperty(PropertyName = "center")]
         public GeoPoint Center { get; set; }
 
         /// <summary>
+        /// Gets or sets the accuracy of the search on that location in meters.
         /// </summary>
         [JsonProperty(PropertyName = "radius")]
         public double? Radius { get; set; }
