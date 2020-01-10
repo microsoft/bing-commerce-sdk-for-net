@@ -26,7 +26,7 @@
                 var objectAttr = type.GetCustomAttributes(inherit: false).OfType<JsonObjectAttribute>().SingleOrDefault();
                 var schemaName = objectAttr?.Id;
 
-                // Retail SchemaName attributes pass through the AutoRest x-ms-discriminator-value OAS extension into
+                // Bing Commerce SchemaName attributes pass through the AutoRest x-ms-discriminator-value OAS extension into
                 // generated JsonObject attributes, however AutoRest adds additional JsonObject attributes where
                 // SchemaName is not present (particularly for abstract types), often with dots, so we try to filter
                 // those out.
