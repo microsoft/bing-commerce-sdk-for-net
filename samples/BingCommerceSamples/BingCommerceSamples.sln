@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BingCommerceSamples", "BingCommerceSamples.csproj", "{04CCD706-05BB-4706-A6CA-83FB110BC2BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BingCommerceSearch", "..\..\src\search\src\BingCommerceSearch.csproj", "{7D661402-D8CC-4D1E-B65A-AC8964F2538B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BingCommerceIngestion", "..\..\src\ingestion\src\BingCommerceIngestion.csproj", "{9A5B7534-ACC1-4969-8B42-EB343B5DD399}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|amd64 = Debug|amd64
+		Debug|Any CPU = Debug|Any CPU
+		Release|amd64 = Release|amd64
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Debug|amd64.ActiveCfg = Debug|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Debug|amd64.Build.0 = Debug|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Release|amd64.ActiveCfg = Release|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Release|amd64.Build.0 = Release|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04CCD706-05BB-4706-A6CA-83FB110BC2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Debug|amd64.ActiveCfg = Debug|amd64
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Debug|amd64.Build.0 = Debug|amd64
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Debug|Any CPU.ActiveCfg = Debug|amd64
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Release|amd64.ActiveCfg = Release|amd64
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Release|amd64.Build.0 = Release|amd64
+		{7D661402-D8CC-4D1E-B65A-AC8964F2538B}.Release|Any CPU.ActiveCfg = Release|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Debug|amd64.ActiveCfg = Debug|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Debug|amd64.Build.0 = Debug|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Debug|Any CPU.ActiveCfg = Debug|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Release|amd64.ActiveCfg = Release|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Release|amd64.Build.0 = Release|amd64
+		{9A5B7534-ACC1-4969-8B42-EB343B5DD399}.Release|Any CPU.ActiveCfg = Release|amd64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CAC21E6-5776-4CE9-87E4-2495AAC46236}
+	EndGlobalSection
+EndGlobal
