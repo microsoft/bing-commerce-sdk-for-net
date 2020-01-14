@@ -19,8 +19,7 @@ namespace Microsoft.Bing.Commerce.Search.Tests
     [TestClass]
     public class SearchTests
     {
-
-        private static readonly ServiceClientCredentials Credentials = new AppIdCredentials(Environment.GetEnvironmentVariable("SEARCH_APPID"));
+        private static readonly ServiceClientCredentials Credentials = new TokenCredentials(Environment.GetEnvironmentVariable("SEARCH_TOKEN"));
         private static readonly string TenantId =  Environment.GetEnvironmentVariable("SEARCH_TENANT");
         private static readonly string IndexId = Environment.GetEnvironmentVariable("SEARCH_INDEX");
 
