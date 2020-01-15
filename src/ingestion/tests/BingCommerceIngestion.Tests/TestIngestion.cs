@@ -9,12 +9,13 @@ namespace Microsoft.Bing.Commerce.Ingestion.Tests
     using System.Threading.Tasks;
     using System.Web;
     using System;
+    using Microsoft.Rest;
 
     [TestClass]
     public class TestIngestion
     {
-        private static readonly AppIdCredentials Credentials = new AppIdCredentials(
-            Environment.GetEnvironmentVariable("INGEST_APPID"));
+        private static readonly ServiceClientCredentials Credentials = new TokenCredentials(
+            Environment.GetEnvironmentVariable("INGEST_TOKEN"));
         private static readonly string TENANT_ID = Environment.GetEnvironmentVariable("INGEST_TENANT");
         private static readonly string TEST_INDEX_NAME = "testIndex01234";
 

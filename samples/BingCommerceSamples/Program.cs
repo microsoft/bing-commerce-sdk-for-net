@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 using Microsoft.Bing.Commerce.Search.Models;
 using Microsoft.Bing.Commerce.Ingestion.Models;
 using Index = Microsoft.Bing.Commerce.Ingestion.Models.Index;
+using Microsoft.Rest;
 
 namespace BingCommerceSamples
 {
     class Program
     {
         private readonly static string TENANT_ID = Environment.GetEnvironmentVariable("TENANT_ID");
-        private readonly static string APPID = Environment.GetEnvironmentVariable("APPID");
+        private readonly static string ACCESS_TOKEN = Environment.GetEnvironmentVariable("ACCESS_TOKEN");
         private readonly static string INDEX_NAME = "SampleIndex";
 
         static async Task Main(string[] args)
@@ -177,16 +178,16 @@ namespace BingCommerceSamples
 
         private static BingCommerceSearch CreateSearchClient()
         {
-            Console.WriteLine($"Creating the search client with app id : {APPID}");
+            Console.WriteLine($"Creating the search client with access token : {ACCESS_TOKEN}");
 
-            return new BingCommerceSearch(new Microsoft.Bing.Commerce.Search.AppIdCredentials(APPID));
+            return new BingCommerceSearch(new TokenCredentials(ACCESS_TOKEN));
         }
 
         private static BingCommerceIngestion CreateIngestionClient()
         {
-            Console.WriteLine($"Creating the ingestion client with app id : {APPID}");
+            Console.WriteLine($"Creating the ingestion client with access token : {ACCESS_TOKEN}");
 
-            return new BingCommerceIngestion(new Microsoft.Bing.Commerce.Ingestion.AppIdCredentials(APPID));
+            return new BingCommerceIngestion(new TokenCredentials(ACCESS_TOKEN));
         }
     }
 
