@@ -1,4 +1,7 @@
-﻿
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+
 namespace Microsoft.Bing.Commerce.Search
 {
     public partial class BingCommerceSearch

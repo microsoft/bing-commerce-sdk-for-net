@@ -1,4 +1,7 @@
-﻿using Microsoft.Bing.Commerce.Ingestion;
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+using Microsoft.Bing.Commerce.Ingestion;
 using Microsoft.Bing.Commerce.Search;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,7 @@
-﻿namespace Microsoft.Bing.Commerce.Search
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+namespace Microsoft.Bing.Commerce.Search
 {
     using Microsoft.Bing.Commerce.Search.Models;
     using Newtonsoft.Json;

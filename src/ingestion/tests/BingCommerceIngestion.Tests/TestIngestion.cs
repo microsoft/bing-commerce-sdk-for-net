@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
 namespace Microsoft.Bing.Commerce.Ingestion.Tests
 {
     using Microsoft.Bing.Commerce.Ingestion;

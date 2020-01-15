@@ -1,8 +1,5 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SearchTests.cs" company="Microsoft">
-//     Copyright (c) Microsoft. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
 
 namespace Microsoft.Bing.Commerce.Search.Tests
 {
