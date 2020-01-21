@@ -30,11 +30,10 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// </summary>
         /// <param name="value">The search terms to match on the specified
         /// fields.</param>
-        public RequestBingMatchStreams(string value = default(string), IList<string> include = default(IList<string>), IList<string> exclude = default(IList<string>))
+        public RequestBingMatchStreams(string value = default(string), IList<string> include = default(IList<string>))
             : base(value)
         {
             Include = include;
-            Exclude = exclude;
             CustomInit();
         }
 
@@ -47,11 +46,6 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// </summary>
         [JsonProperty(PropertyName = "include")]
         public IList<string> Include { get; set; }
-
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "exclude")]
-        public IList<string> Exclude { get; set; }
 
     }
 }

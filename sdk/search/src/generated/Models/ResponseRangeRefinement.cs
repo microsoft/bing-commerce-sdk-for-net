@@ -10,8 +10,6 @@
 namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
@@ -31,23 +29,15 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseRangeRefinement class.
         /// </summary>
-        /// <param name="errors">A list of errors that happened to the task, if
-        /// any.</param>
-        /// <param name="name">The aggregation name as defined in the
-        /// requset.</param>
-        /// <param name="estimatedCount">An estimated count of items in this
-        /// aggregation.</param>
-        /// <param name="aggregations">The list of child aggregations, if
-        /// any.</param>
-        /// <param name="label">The label to use for the aggregation, that you
-        /// can use to render your UI.</param>
+        /// <param name="estimatedCount">An estimate of the number of items in
+        /// this refinement.</param>
         /// <param name="ge">The inclusive lower bound of the range. Values in
         /// the refinement are greater than or equal to this lower
         /// bound.</param>
         /// <param name="lt">The exclusive upper bound of the range. Values in
         /// the refinement are strictly less than this upper bound</param>
-        public ResponseRangeRefinement(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string label = default(string), double? ge = default(double?), double? lt = default(double?))
-            : base(errors, debug, name, estimatedCount, aggregations, label)
+        public ResponseRangeRefinement(long? estimatedCount = default(long?), double? ge = default(double?), double? lt = default(double?))
+            : base(estimatedCount)
         {
             Ge = ge;
             Lt = lt;

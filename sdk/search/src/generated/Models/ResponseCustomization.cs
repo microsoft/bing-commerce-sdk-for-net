@@ -41,7 +41,7 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// result.</param>
         /// <param name="boosts">The boost expressions applied to the search
         /// result.</param>
-        public ResponseCustomization(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), bool? queryAlteration = default(bool?), IList<Synonym> synonyms = default(IList<Synonym>), IList<string> rules = default(IList<string>), ConditionBase filter = default(ConditionBase), IList<ResponseBoostExpression> boosts = default(IList<ResponseBoostExpression>))
+        public ResponseCustomization(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), bool? queryAlteration = default(bool?), IList<Synonym> synonyms = default(IList<Synonym>), IList<string> rules = default(IList<string>), ConditionBase filter = default(ConditionBase), IList<BoostExpression> boosts = default(IList<BoostExpression>))
             : base(errors, debug)
         {
             QueryAlteration = queryAlteration;
@@ -85,7 +85,7 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// Gets or sets the boost expressions applied to the search result.
         /// </summary>
         [JsonProperty(PropertyName = "boosts")]
-        public IList<ResponseBoostExpression> Boosts { get; set; }
+        public IList<BoostExpression> Boosts { get; set; }
 
     }
 }
