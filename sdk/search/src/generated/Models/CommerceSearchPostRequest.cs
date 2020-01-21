@@ -28,7 +28,7 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// Initializes a new instance of the CommerceSearchPostRequest class.
         /// </summary>
         /// <param name="market">The market where the results come from.
-        /// Thypically, `mkt` is the country where the user is making the
+        /// Typically, `mkt` is the country where the user is making the
         /// request from.</param>
         /// <param name="language">The language to use for user interface
         /// strings. You may specify the language using either a 2-letter or
@@ -58,7 +58,7 @@ namespace Microsoft.Bing.Commerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the market where the results come from. Thypically,
+        /// Gets or sets the market where the results come from. Typically,
         /// `mkt` is the country where the user is making the request from.
         /// </summary>
         [JsonProperty(PropertyName = "market")]
