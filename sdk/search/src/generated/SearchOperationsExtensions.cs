@@ -63,7 +63,7 @@ namespace Microsoft.Bing.Commerce.Search
             /// <param name='index'>
             /// </param>
             /// <param name='mkt'>
-            /// The market where the results come from. Thypically, `mkt` is the country
+            /// The market where the results come from. Typically, `mkt` is the country
             /// where the user is making the request from.
             /// </param>
             /// <param name='setlang'>
