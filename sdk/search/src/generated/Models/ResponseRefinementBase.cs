@@ -10,15 +10,13 @@
 namespace Microsoft.Bing.Commerce.Search.Models
 {
     using Newtonsoft.Json;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Linq;
 
     /// <summary>
-    /// Defines the abstract base type for refinement based aggregation.
+    /// The abstract base type for a refinement on a facet
     /// </summary>
     [Newtonsoft.Json.JsonObject("Response.RefinementBase")]
-    public partial class ResponseRefinementBase : ResponseAggregation
+    public partial class ResponseRefinementBase
     {
         /// <summary>
         /// Initializes a new instance of the ResponseRefinementBase class.
@@ -31,20 +29,11 @@ namespace Microsoft.Bing.Commerce.Search.Models
         /// <summary>
         /// Initializes a new instance of the ResponseRefinementBase class.
         /// </summary>
-        /// <param name="errors">A list of errors that happened to the task, if
-        /// any.</param>
-        /// <param name="name">The aggregation name as defined in the
-        /// requset.</param>
-        /// <param name="estimatedCount">An estimated count of items in this
-        /// aggregation.</param>
-        /// <param name="aggregations">The list of child aggregations, if
-        /// any.</param>
-        /// <param name="label">The label to use for the aggregation, that you
-        /// can use to render your UI.</param>
-        public ResponseRefinementBase(IList<ResponseError> errors = default(IList<ResponseError>), IList<ResponseDebugInfo> debug = default(IList<ResponseDebugInfo>), string name = default(string), long? estimatedCount = default(long?), IList<ResponseAggregation> aggregations = default(IList<ResponseAggregation>), string label = default(string))
-            : base(errors, debug, name, estimatedCount, aggregations)
+        /// <param name="estimatedCount">An estimate of the number of items in
+        /// this refinement.</param>
+        public ResponseRefinementBase(long? estimatedCount = default(long?))
         {
-            Label = label;
+            EstimatedCount = estimatedCount;
             CustomInit();
         }
 
@@ -54,11 +43,10 @@ namespace Microsoft.Bing.Commerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the label to use for the aggregation, that you can use
-        /// to render your UI.
+        /// Gets or sets an estimate of the number of items in this refinement.
         /// </summary>
-        [JsonProperty(PropertyName = "label")]
-        public string Label { get; set; }
+        [JsonProperty(PropertyName = "estimatedCount")]
+        public long? EstimatedCount { get; set; }
 
     }
 }

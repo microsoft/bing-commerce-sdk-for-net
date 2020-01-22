@@ -12,7 +12,7 @@ namespace Microsoft.Bing.Commerce.Search.Models
     using System.Linq;
 
     /// <summary>
-    /// The condition that triggered a boost in ranking score.
+    /// The condition that items must satisfy to be boosted.
     /// </summary>
     public partial class ConditionBase
     {

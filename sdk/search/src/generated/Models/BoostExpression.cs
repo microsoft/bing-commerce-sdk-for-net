@@ -13,27 +13,27 @@ namespace Microsoft.Bing.Commerce.Search.Models
     using System.Linq;
 
     /// <summary>
-    /// Defines an expression that modifies the ranking score of results based
-    /// on a condition.
+    /// An expression that modifies the ranking score for item search results
+    /// satisfying a condition.
     /// </summary>
-    public partial class RequestBoostExpression
+    public partial class BoostExpression
     {
         /// <summary>
-        /// Initializes a new instance of the RequestBoostExpression class.
+        /// Initializes a new instance of the BoostExpression class.
         /// </summary>
-        public RequestBoostExpression()
+        public BoostExpression()
         {
             CustomInit();
         }
 
         /// <summary>
-        /// Initializes a new instance of the RequestBoostExpression class.
+        /// Initializes a new instance of the BoostExpression class.
         /// </summary>
-        /// <param name="condition">The condition that triggers a boost in
-        /// ranking score.</param>
-        /// <param name="boost">The magnitude of a boost. The range is -10
-        /// million to 10 million.</param>
-        public RequestBoostExpression(ConditionBase condition = default(ConditionBase), double? boost = default(double?))
+        /// <param name="condition">The condition that items must satisfy to be
+        /// boosted.</param>
+        /// <param name="boost">The value to add to the ranking score. The
+        /// range is -10,000,000 to 10,000,000.</param>
+        public BoostExpression(ConditionBase condition = default(ConditionBase), double? boost = default(double?))
         {
             Condition = condition;
             Boost = boost;
@@ -46,14 +46,14 @@ namespace Microsoft.Bing.Commerce.Search.Models
         partial void CustomInit();
 
         /// <summary>
-        /// Gets or sets the condition that triggers a boost in ranking score.
+        /// Gets or sets the condition that items must satisfy to be boosted.
         /// </summary>
         [JsonProperty(PropertyName = "condition")]
         public ConditionBase Condition { get; set; }
 
         /// <summary>
-        /// Gets or sets the magnitude of a boost. The range is -10 million to
-        /// 10 million.
+        /// Gets or sets the value to add to the ranking score. The range is
+        /// -10,000,000 to 10,000,000.
         /// </summary>
         [JsonProperty(PropertyName = "boost")]
         public double? Boost { get; set; }

@@ -325,6 +325,8 @@ namespace Microsoft.Bing.Commerce.Search
             DeserializationSettings.Converters.Add(new  PolymorphicDeserializeJsonConverter<ResponseDebugInfo>("_type"));
             SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ResponseTask>("_type"));
             DeserializationSettings.Converters.Add(new  PolymorphicDeserializeJsonConverter<ResponseTask>("_type"));
+            SerializationSettings.Converters.Add(new PolymorphicSerializeJsonConverter<ResponseRefinementBase>("_type"));
+            DeserializationSettings.Converters.Add(new  PolymorphicDeserializeJsonConverter<ResponseRefinementBase>("_type"));
             CustomInitialize();
         }
     }
