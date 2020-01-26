@@ -13,6 +13,7 @@ namespace Microsoft.Bing.Commerce.Ingestion.Tests
     using System.Web;
     using System;
     using Microsoft.Rest;
+    using System.IO;
 
     [TestClass]
     public class TestIngestion
@@ -36,7 +37,6 @@ namespace Microsoft.Bing.Commerce.Ingestion.Tests
                 }
             }
         }
-
 
         [TestMethod]
         public async Task TestIndexes()
@@ -115,6 +115,38 @@ namespace Microsoft.Bing.Commerce.Ingestion.Tests
             Assert.IsNotNull(statusResposne, "Expected non-null response");
             Assert.IsNotNull(statusResposne.Status, "Expected non-null status");
         }
+
+        [TestMethod]
+        public async Task TestTransfromationApi()
+        {
+            var client = CreateClient();
+
+            var indexId = await EnsureTestIndex(client);
+
+            var script = File.ReadAllText("data\\transformation.js");
+
+            var createScriptResponse = await client.CreateOrUpdateTransformationConfigAsync(script, TENANT_ID, indexId);
+            var readScriptResponse = await client.GetTransformationConfigAsync(TENANT_ID, indexId);
+            var deleteScriptResponse = await client.DeleteTransformationConfigAsync(TENANT_ID, indexId);
+
+            Assert.AreEqual(script, deleteScriptResponse.Value);
+            await Assert.ThrowsExceptionAsync<HttpOperationException>(async () => await client.GetTransformationConfigAsync(TENANT_ID, indexId));
+        }
+
+        [TestMethod]
+        public async Task TestTryoutTransfromationApi()
+        {
+            var client = CreateClient();
+
+            var script = File.ReadAllText("data\\transformation.js");
+            var data = File.ReadAllText("data\\tryout_data.tsv");
+
+            var createScriptResponse = await client.UploadTryOutConfigAsync(script);
+            var executeResponse = await client.ExecuteTryOutConfigAsync(data, createScriptResponse.TryOutId);
+
+            Assert.AreEqual("Succeeded", executeResponse.Status);
+        }
+
 
         private async Task<string> EnsureTestIndex(BingCommerceIngestion client)
         {
